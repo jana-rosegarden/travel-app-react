@@ -1,3 +1,11 @@
+
+import valsalineImage from "../assets/images/strands/valsaline.webp"
+import ambrelaImage from "../assets/images/strands/ambrela.webp"
+import gortanovaCoveImage from "../assets/images/strands/gortanova-cove.webp"
+import histriaImage from "../assets/images/strands/histria.webp"
+import valkaneImage from "../assets/images/strands/valkane.webp"
+
+
 export const strands = [
     {
         name: {
@@ -31,7 +39,8 @@ export const strands = [
         info: {
             de: "Beliebter Kiesel- und Sandstrand am Ende der Lungomare-Promenade, ideal für Familien und Sonnenanbeter. Er zeichnet sich durch flach abfallendes Wasser und eine angrenzende Waldfläche. Es gibt dort Gastronomie, Duschen und Wassersportmöglichkeiten",
             uk: "Популярний гальково-піщаний пляж у кінці набережної Лунгомаре, ідеальний для сімей та любителів сонячних ванн. Він вирізняється пологим входом у воду та прилеглим лісовим масивом. Тут є заклади харчування, душові та можливості для занять водними "
-        }
+        },
+        image: valsalineImage
     },
     {
         name: {
@@ -48,7 +57,8 @@ export const strands = [
         info: {
             de: "Ein malerischer, familienfreundlicher Kieselstrand an der Promenade Lungomare, umgeben von schattigen Pinienwäldern. Er bietet einen flachen Einstieg ins kristallklare Wasser, ist ideal für Kinder und Schnorchler. Der Strand bietet eine entspannte Atmosphäre, eine kleine Strandbar und ist ein beliebter Ort für Einheimische und Touristen.",
             uk: "Мальовничий гальковий пляж, ідеальний для сімейного відпочинку, розташований на набережній Лунгомаре в оточенні тінистих соснових лісів. Він має пологий спуск у кришталево чисту воду, що робить його ідеальним для дітей та любителів снорклінгу. Пляж вирізняється спокійною атмосферою, має невеликий пляжний бар і є улюбленим місцем як для місцевих жителів, так і для туристів."
-        }
+        },
+        image: gortanovaCoveImage
     },
     {
         name: {
@@ -65,7 +75,8 @@ export const strands = [
         info: {
             de: "Der Valkane Strand in Pula ist ein beliebter, gut ausgestatteter Stadtstrand (mit Blauer Flagge) in einer Bucht, der Kies-, Beton- und Felsabschnitte bietet. Ausstattung: Duschen, Umkleidekabinen, Kinderspielplatz, Beachvolleyball- und Tennisplätze in der Nähe. Gastronomie: Zwei Beach-Bars/Restaurants vor Ort.",
             uk: "Пляж «Валкане» в Пулі — це популярний, добре облаштований міський пляж (відзначений «Блакитним прапором»), розташований у бухті, що має ділянки з галькою, бетоном та скелями. Обладнання: душові, роздягальні, дитячий майданчик, майданчики для пляжного волейболу та тенісу поблизу. Харчування: два пляжні бари/ресторани на території."
-        }
+        },
+        image: valkaneImage
     },
     {
         name: {
@@ -82,7 +93,8 @@ export const strands = [
         info: {
             de: "Der Ambrela Strand (Plaža Ambrela) auf der Verudela-Halbinsel in Pula ist ein beliebter, mit der Blauen Flagge zertifizierter Kiesstrand. Er ist besonders für Familien geeignet, da das Wasser flach abfällt. Er bietet Pinienbäume für Schatten, Rettungsschwimmer, Duschen, Liegenverleih und Bars. ",
             uk: "Пляж Амбрела (Plaža Ambrela) на півострові Верудела в Пулі — це популярний гальковий пляж, сертифікований «Блакитним прапором». Він особливо підходить для сімейного відпочинку, оскільки дно поглиблюється плавно. Тут є сосни, що дають прохолодну тінь, рятувальники, душові, прокат шезлонгів та бари. "
-        }
+        },
+        image: ambrelaImage
     },
     {
         name: {
@@ -99,6 +111,7 @@ export const strands = [
         info: {
             de: "Der Strand ist eine Mischung aus Kiesabschnitten und Felsplateaus.Kristallklares Wasser: Ausgezeichnet mit der Blauen Flagge für hohe Wasserqualität.Flacher Einstieg: Der Kiesstrand fällt sanft ins Meer ab, ideal für Kinder und Senioren.Natürlicher Schatten: Pinienbäume im Hintergrund bieten Schutz vor der Mittagssonne",
             uk: "Пляж складається з ділянок з галькою та скелястих плато. Кришталево чиста вода: нагороджений «Блакитним прапором» за високу якість води. Пологий спуск: гальковий пляж плавно спускається до моря, що ідеально підходить для дітей та людей похилого віку. Природна тінь: сосни на задньому плані забезпечують захист від полуденного сонця"
-        }
-    },
+        },
+        image: histriaImage
+    }
 ]
