@@ -1,3 +1,6 @@
+import paradiso1Image from "../assets/images/kontakts/paradiso1.webp"
+import paradiso2Image from "../assets/images/kontakts/paradiso2.webp"
+
 export const telefonNummer = [
     {
         name:{
@@ -40,5 +43,19 @@ export const telefonNummer = [
             ukr: "Назар"
         },
         telefon: 48729498910
+    }
+];
+
+const zuhauseJA = [
+    {
+        name: {
+        de: "Andi, Jana, Marian, Rafael",
+        ukr: "Анді, Яна, Мар'ян, Рафаель"
+       },
+        adresse:{
+            de: "Pula, 52100, Monte Paradiso 44",
+            ukr: "Пула, 52100, вул. Монте Парадізо 44"
+        },
+        image: [paradiso1Image, paradiso2Image]
     }
 ]
