@@ -1,4 +1,15 @@
 
+import amphitheaterImage from "../assets/images/sehenswürdigkeiten/amphitheater.webp"
+import augustusTempelImage from "../assets/images/sehenswürdigkeiten/augustus-tempel.webp"
+import piramidaImage from "../assets/images/sehenswürdigkeiten/piramida.webp"
+import platzAussichtImage from "../assets/images/sehenswürdigkeiten/platz-aussicht.webp"
+import pulaZitadelImage from "../assets/images/sehenswürdigkeiten/pula-zitadel.webp"
+import verudelaImage from "../assets/images/sehenswürdigkeiten/verudela.webp"
+import vollkplatzImage from "../assets/images/sehenswürdigkeiten/vollksplatz.webp"
+import zerostrasseImage from "../assets/images/sehenswürdigkeiten/zerostrasse.webp"
+
+
+
 export const sehenswuerdigkeiten = [
     {
         name: {
@@ -46,7 +57,7 @@ export const sehenswuerdigkeiten = [
             de: "Von Mai bis September ist sie täglich von 08:00/09:00 bis 21:00 Uhr geöffnet",
             ukr: "З травня по вересень вона працює щодня з 08:00/09:00 до 21:00"
         },
-        image: kkk
+        image: pulaZitadelImage
     },
     {
         name: {
@@ -70,7 +81,7 @@ export const sehenswuerdigkeiten = [
             de: "Keine festen Öffnungszeiten.",
             ukr: "Немає фіксованих годин роботи."
         },
-        image: kkk
+        image: platzAussichtImage
     },
     {
         name: {
@@ -94,7 +105,7 @@ export const sehenswuerdigkeiten = [
             de: "Wochentags und samstags meist von 7:00 bis 13:00 oder 14:00 Uhr (Stände) bzw. bis 15:00 Uhr (Geschäfte) geöffnet. Der Fischmarkt schließt oft gegen 13:00 Uhr. Sonntags sind die Zeiten kürzer, meist bis 12:00 Uhr.",
             ukr: "У будні та суботу ринок зазвичай працює з 7:00 до 13:00 або 14:00 (торгові ятки) та до 15:00 (магазини). Рибний ринок часто закривається близько 13:00. У неділю години роботи скорочені, зазвичай до 12:00."
         },
-        image: kkk
+        image: vollkplatzImage
     },
     {
         name: {
@@ -118,7 +129,7 @@ export const sehenswuerdigkeiten = [
             de: "Keine festen Öffnungszeiten",
             ukr: "Фіксованих часів огляду немає"
         },
-        image: kkk
+        image: piramidaImage
     },
     {
         name: {
@@ -142,7 +153,7 @@ export const sehenswuerdigkeiten = [
             de: "Mai – September: Täglich von 09:00 bis 21:00 Uhr",
             ukr: "Травень – вересень: щодня з 09:00 до 21:00"
         },
-        image: kkk
+        image: zerostrasseImage
     },
      {
         name: {
@@ -166,7 +177,7 @@ export const sehenswuerdigkeiten = [
             de: "Mai, Juni, September: 09:00 – 20:00 Uhr",
             ukr: "Травень, червень, вересень: 09:00 – 20:00"
         },
-        image: kkk
+        image: augustusTempelImage
     },
     {
         name: {
@@ -190,7 +201,7 @@ export const sehenswuerdigkeiten = [
             de: "Das Gelände ist frei zugänglich und theoretisch 24 Stunden am Tag offen",
             ukr: "Територія є вільно доступною і, теоретично, працює цілодобово"
         },
-        image: kkk
+        image: verudelaImage
     },
     {
         name: {
@@ -214,6 +225,6 @@ export const sehenswuerdigkeiten = [
             de: "Mai: 08:00 – 21:00 Uhr",
             ukr: "Травень: 08:00 – 21:00"
         },
-        image: kkk
+        image: amphitheaterImage
     }
 ]
