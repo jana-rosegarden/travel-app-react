@@ -31,8 +31,8 @@ export const aerzte = [
     },
     {
         name:{
-            de: "Dr. Mirjana Barac Santini",
-            ukr: "Dr. Mirjana Barac Santini"
+            de: "Dr. Mirjana Barac Santini. Kinderarzt",
+            ukr: "Dr. Mirjana Barac Santini. Педіатор"
         },
         adresse: {
             de: "Tommaseova ul. 11, 52100, Pula",
