@@ -4,6 +4,7 @@ import { BrowserRouter, Routes,  Route, Link, NavLink} from 'react-router-dom'
 import './App.css'
 
 import Header from './components/Header.jsx'
+import Nav from './components/Nav.jsx'
 
 function App() {
   
@@ -11,6 +12,7 @@ function App() {
   return (
       <BrowserRouter>
           <Header />
+          <Nav />
       </BrowserRouter>
   )
 }

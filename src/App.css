@@ -18,3 +18,27 @@
    color: white;
    font-size: 4em;
 }
+.nav-haupt{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.div-hauses{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+.div-lang{
+    display: flex;
+    gap: 0.5em;
+}
+.button-lang{
+    display: inline-block;
+    border: none;
+    
+}
+.button-lang__img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
