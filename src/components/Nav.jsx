@@ -3,19 +3,26 @@ import { Link } from "react-router-dom"
 
 import deLang from "../assets/images/icons/de.webp";
 import ukrLang from "../assets/images/icons/ukr.webp"
+import { useContext } from "react";
+
+import { LanguageContext } from "../App.jsx";
 
 export default function Nav(){
+
+    const {lang, setLang} = useContext(LanguageContext);
+    
     return(
         <nav className="nav-haupt">
             <div className="div-hauses">
-                <Link> Home </Link>
-                <Link> Haus Monte Paradiso</Link>
-                <Link> Haus Mattea Benussia </Link>
+                <Link> {lang === "de" ? "Home" : "Головна"} </Link>
+                <Link> {lang === "de" ? "Haus Monte Paradiso" : "Будинок Monte Paradiso: Яна та Анді"} </Link>
+                <Link> {lang === "de" ? "Haus Mattea Benussia" : "Будинок Mattea Benussia: Назар та батьки"}  </Link>
             </div>
 
             <div className="div-lang">
                 <button
                   className="button-lang"
+                  onClick={()=> setLang("de")}
                 >
                     <img src={deLang} 
                     alt="Deutsch" 
@@ -24,6 +31,7 @@ export default function Nav(){
 
                 <button
                     className="button-lang"
+                    onClick={()=>setLang("ukr")}
                 >
                     <img src={ukrLang} 
                     alt="Українська" 
