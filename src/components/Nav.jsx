@@ -14,9 +14,9 @@ export default function Nav(){
     return(
         <nav className="nav-haupt">
             <div className="div-hauses">
-                <Link> {lang === "de" ? "Home" : "Головна"} </Link>
-                <Link> {lang === "de" ? "Haus Monte Paradiso" : "Будинок Monte Paradiso: Яна та Анді"} </Link>
-                <Link> {lang === "de" ? "Haus Mattea Benussia" : "Будинок Mattea Benussia: Назар та батьки"}  </Link>
+                <Link to="/"> {lang === "de" ? "Home" : "Головна"} </Link>
+                <Link to="/house/paradiso"> {lang === "de" ? "Haus Monte Paradiso" : "Будинок Monte Paradiso: Яна та Анді"} </Link>
+                <Link to="/house/benussia"> {lang === "de" ? "Haus Mattea Benussia" : "Будинок Mattea Benussia: Назар та батьки"}  </Link>
             </div>
 
             <div className="div-lang">

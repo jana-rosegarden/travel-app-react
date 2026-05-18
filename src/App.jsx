@@ -7,6 +7,10 @@ import Header from './components/Header.jsx';
 import Nav from './components/Nav.jsx';
 import Main from './components/Main.jsx';
 
+import Home from './pages/Home.jsx';
+import Hause from './pages/Hause.jsx';
+import Kategorieliste from './pages/Kategorieliste.jsx';
+
 export const LanguageContext = createContext();
 
 function App() {
@@ -23,6 +27,14 @@ function App() {
           <Header />
           <Nav />
           <Main />
+
+        <Routes>
+            <Route path='/' element={<Home/>}></Route>
+            <Route path='/house/:hause' element={<Hause />}></Route>
+            <Route path='/category/:category' element={<Kategorieliste />}></Route>
+        </Routes>
+
+
       </BrowserRouter>
 
       </LanguageContext. Provider>
