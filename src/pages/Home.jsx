@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
+
+import Main from "../components/Main.jsx"
+
 export default function Home(){
     return(
-        <>
-         <h1>Here will be Homepage</h1>
-        </>
+        <Main />
     )
 }

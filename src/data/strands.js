@@ -7,23 +7,7 @@ import valkaneImage from "../assets/images/strands/valkane.webp"
 
 
 export const strands = [
-    {
-        name: {
-            de: "kkk",
-            uk: " "
-        },
-        id: "KKK",
-        entfernung: 22,
-        isKostenfrei: true,
-        parken: {
-            de: "kkk",
-            uk: "..."
-        },
-        info: {
-            de: "kkkk",
-            uk: "kkkk"
-        }
-    },
+
     {
         name: {
             de: "Valsaline (Mornar)",

@@ -8,19 +8,7 @@ import ribarskaKolibaImage from "../assets/images/spielplaetze/ribarska-koliba.w
 import verudelaImage from "../assets/images/spielplaetze/verudela.webp"
 
 
-export const spieplaetze = [
-    {
-        name: {
-            de: "kk",
-            ukr: "kkk"
-        },
-        adresse: {
-            de: "kk",
-            ukr: "kkk"
-        },
-        entfernung: 22,
-        image: jjj
-    },
+export const spielplatz = [
     {
         name: {
             de: "Ribarska koliba Playground",
@@ -31,7 +19,8 @@ export const spieplaetze = [
             ukr: "Верудела, 16, 52100 Пула"
         },
         entfernung: 1.2,
-        image: ribarskaKolibaImage
+        image: ribarskaKolibaImage,
+        id: "ribarska"
     },
     {
         name: {
@@ -43,7 +32,8 @@ export const spieplaetze = [
             ukr: "Вул. Еміна, 52100, Пула"
         },
         entfernung: 2.0,
-        image: montezaroParkImage
+        image: montezaroParkImage,
+        id: "montezaro"
     },
     {
         name: {
@@ -55,7 +45,8 @@ export const spieplaetze = [
             ukr: "Стоя, 52100, Пула (Валкане, 12, 52100, Пула)"
         },
         entfernung: 2.5,
-        image: parkValkaneZelenikaImage
+        image: parkValkaneZelenikaImage,
+        id: "zelenika"
     },
     {
         name: {
@@ -67,7 +58,8 @@ export const spieplaetze = [
             ukr: "Верудела, 33, 52100, Пула"
         },
         entfernung: 2.2,
-        image: verudelaImage
+        image: verudelaImage,
+        id: "parkverudela"
     },
     {
         name: {
@@ -79,7 +71,8 @@ export const spieplaetze = [
             ukr: "Верудела, 11, 52100, Пула"
         },
         entfernung: 2.1,
-        image: parkPlazaVerudelaImage
+        image: parkPlazaVerudelaImage,
+        id: "parkplaza"
     },
     {
         name: {
@@ -91,7 +84,8 @@ export const spieplaetze = [
             ukr: "Верудела, 22, 52100, Пула"
         },
         entfernung: 1.6,
-        image: artParkVerudelaImage
+        image: artParkVerudelaImage,
+        id: "artpark"
     },
     {
         name: {
@@ -103,6 +97,7 @@ export const spieplaetze = [
             ukr: "Вул. Св. Полікарпа, 8, 52100, Пула"
         },
         entfernung: 2.1,
-        image: peekabooImage
+        image: peekabooImage,
+        id: "peekaboo"
     }
 ]

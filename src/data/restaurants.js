@@ -20,7 +20,6 @@ export const restaurants = [
         id: "soprano",
         entfernung: 0.17,
         image: sopranoImage
-        
     },
     {
         name: {

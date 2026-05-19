@@ -26,7 +26,7 @@ function App() {
       <BrowserRouter>
           <Header />
           <Nav />
-          <Main />
+          
 
         <Routes>
             <Route path='/' element={<Home/>}></Route>
