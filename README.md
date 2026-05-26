@@ -10,7 +10,7 @@ Die Anwendung wurde hauptsächlich für Smartphones und Tablets entwickelt, um d
 - JavaScript
 - React
 
-## Besonderheiten
+## 🧬 Besonderheiten
 - Mobile-first Design für Smartphones und Tablets
 - Optimiert für die Nutzung unterwegs
 - Funktioniert vollständig offline nach dem Laden der Anwendung
