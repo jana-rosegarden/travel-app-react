@@ -1,16 +1,38 @@
-# React + Vite
+# Travel App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Eine responsive Webanwendung für Familienreisen.  
+Die App zeigt wichtige Orte und Einrichtungen in der Nähe, die für einen Familienurlaub hilfreich sein können.
+Die Anwendung wurde hauptsächlich für Smartphones und Tablets entwickelt, um die Nutzung unterwegs während eines Familienurlaubs möglichst bequem zu gestalten.
 
-Currently, two official plugins are available:
+## 🔧 Technologien
+- HTML5
+- CSS3
+- JavaScript
+- React
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Besonderheiten
+- Mobile-first Design für Smartphones und Tablets
+- Optimiert für die Nutzung unterwegs
+- Funktioniert vollständig offline nach dem Laden der Anwendung
+- Geeignet für unterwegs und auf Reisen mit eingeschränkter Internetverbindung
 
-## React Compiler
+## 📋 Funktionen
+- Sprachwechsel zwischen Deutsch und Ukrainisch
+- Anzeige von Einrichtungen nach ausgewählter Kategorie
+- Darstellung von Fotos, Adressen, Entfernungen und weiteren Informationen
+- Möglichkeit, ausgewählte Orte zu Favoriten hinzuzufügen 
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+## 🚀 Live Demo
+https://travel-family-app.netlify.app
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📦 Installation
+```bash
+npm install
+npm run dev
+
+## 📸 Screenshot
+(coming soon)
+
+## 👤 Autor
+Jana Engenhorst
