@@ -28,6 +28,7 @@ export default function Kategorieliste(){
                         adresse={item.adresse || undefined}
                         entfernung={item.entfernung}
                         image={item.image}
+                        parken={item.parken}
                         />
                 )
             })}
