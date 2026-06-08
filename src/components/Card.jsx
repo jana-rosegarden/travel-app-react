@@ -1,10 +1,13 @@
-import { translations  } from "../data/translations.js"
+import { useContext } from "react";
+
+import { translations  } from "../data/translations.js";
+import { LanguageContext } from "../App.jsx";
 
 export default function Card({name, adresse, entfernung, image}){
-
+    const {lang, setLang} = useContext(LanguageContext);
     const { de, ukr } = translations;
     
-    console.log(adresse)
+    if (adresse) {console.log(adresse)}
 
     return(
         <>
@@ -15,13 +18,13 @@ export default function Card({name, adresse, entfernung, image}){
                
                {adresse && <p> <span>{de.adresse}: </span>   </p>}
                
-               <p> <span>Entfernung: </span> {entfernung}</p>
-               <p> <span>Oeffnungszeiten: </span>  </p>
-               <p> <span>Preise:</span>  </p>
-               <p> <span>Info:</span>  </p>
-               <p> <span>AlterVon: </span>  </p>
-               <p> <span>Eintritt: </span>  </p>
-               <p> <span>Parken: </span>  </p>
+               <p> <span>{lang === "ukr"? ukr.entfernung : de.entfernung} : </span> {entfernung} km</p>
+               <p> <span>{lang === "ukr"? ukr.oeffnungszeiten : de.oeffnungszeiten} : </span>  </p>
+               <p> <span>{lang === "ukr" ? ukr.price : de.price} :</span>  </p>
+               <p> <span>{lang === "ukr" ? ukr.info : de.info} :</span>  </p>
+               <p> <span>{lang === "ukr" ? ukr.alterVon : de.alterVon} : </span>  </p>
+               <p> <span>{lang === "ukr" ? ukr.eintritt : de.eintritt} : </span>  </p>
+               <p> <span>{lang === "ukr"? ukr.parken : de.parken} : </span>  </p>
                
 
             </li>

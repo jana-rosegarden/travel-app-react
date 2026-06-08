@@ -10,7 +10,8 @@ export const translations = {
         price: "Preis",
         info: "Info",
         alterVon: "Für welches Alter geeignet",
-        parken: "Parkensmöglichkeiten"
+        parken: "Parkensmöglichkeiten",
+        eintritt: "Eintritt"
     },
     ukr:{
         name: "Назва",
@@ -20,7 +21,8 @@ export const translations = {
         price: "Ціна",
         info: "Інфо",
         alterVon: "Для якого віку",
-        parken: "Парковка"
+        parken: "Парковка",
+        eintritt: "Вхід"
     }
 };
 
