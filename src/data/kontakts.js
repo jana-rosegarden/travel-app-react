@@ -7,7 +7,7 @@ export const telefonNummer = [
             de: "Jana",
             uk: "Яна"
         },
-        telefon: 4915901632722
+        telefon: 1111111111
     },
     {
         name:{
@@ -46,7 +46,7 @@ export const telefonNummer = [
     }
 ];
 
-const zuhauseJA = [
+export const paradiso = 
     {
         name: {
         de: "Andi, Jana, Marian, Rafael",
@@ -56,6 +56,25 @@ const zuhauseJA = [
             de: "Pula, 52100, Monte Paradiso",
             uk: "Пула, 52100, вул. Монте Парадізо"
         },
-        image: [paradiso1Image, paradiso2Image]
-    }
-]
+        image: [paradiso1Image],
+        id: "paradiso"
+    };
+
+export const benussia = 
+    {
+        name: {
+        de: "Nazar, Vera, Ihor",
+        uk: "Назар, Віра, Ігор"
+       },
+        adresse:{
+            de: "Pula, 52100, Matteo Benussi",
+            uk: "Пула, 52100, вул. Маттео Бенуссі"
+        },
+        image: [paradiso1Image, paradiso2Image],
+        id: "benussia"
+    };
+
+export const kontaktsData = {
+     paradiso,
+     benussia
+}
