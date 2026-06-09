@@ -12,11 +12,11 @@ export const spielplatz = [
     {
         name: {
             de: "Ribarska koliba Playground",
-            ukr: "Дитячий майданчик «Рибарська коліба»"
+            uk: "Дитячий майданчик «Рибарська коліба»"
         },
         adresse: {
             de: "Verudela 16, 52100 Pula",
-            ukr: "Верудела, 16, 52100 Пула"
+            uk: "Верудела, 16, 52100 Пула"
         },
         entfernung: 1.2,
         image: ribarskaKolibaImage,
@@ -25,11 +25,11 @@ export const spielplatz = [
     {
         name: {
             de: "Kinderspielplatz im Montezaro Park",
-            ukr: "Дитячий майданчик у парку Монтезаро"
+            uk: "Дитячий майданчик у парку Монтезаро"
         },
         adresse: {
             de: "Ul. cara Emina, 52100, Pula",
-            ukr: "Вул. Еміна, 52100, Пула"
+            uk: "Вул. Еміна, 52100, Пула"
         },
         entfernung: 2.0,
         image: montezaroParkImage,
@@ -38,11 +38,11 @@ export const spielplatz = [
     {
         name: {
             de: "Djecji park Zelenika",
-            ukr: "Дитячий парк «Зеленіка»"
+            uk: "Дитячий парк «Зеленіка»"
         },
         adresse: {
             de: "Stoja, 52100, Pula (Valkane 12, 52100, Pula)",
-            ukr: "Стоя, 52100, Пула (Валкане, 12, 52100, Пула)"
+            uk: "Стоя, 52100, Пула (Валкане, 12, 52100, Пула)"
         },
         entfernung: 2.5,
         image: parkValkaneZelenikaImage,
@@ -51,11 +51,11 @@ export const spielplatz = [
     {
         name: {
             de: "Park Verudela",
-            ukr: "Парк Верудела"
+            uk: "Парк Верудела"
         },
         adresse: {
             de: "Verudela 33, 52100, Pula",
-            ukr: "Верудела, 33, 52100, Пула"
+            uk: "Верудела, 33, 52100, Пула"
         },
         entfernung: 2.2,
         image: verudelaImage,
@@ -64,11 +64,11 @@ export const spielplatz = [
     {
         name: {
             de: "Park Plaza Verudela Pula",
-            ukr: "Park Plaza Verudela, Пула"
+            uk: "Park Plaza Verudela, Пула"
         },
         adresse: {
             de: "Verudela 11, 52100, Pula",
-            ukr: "Верудела, 11, 52100, Пула"
+            uk: "Верудела, 11, 52100, Пула"
         },
         entfernung: 2.1,
         image: parkPlazaVerudelaImage,
@@ -77,11 +77,11 @@ export const spielplatz = [
     {
         name: {
             de: "Verudela Artpark",
-            ukr: "Артпарк «Верудела»"
+            uk: "Артпарк «Верудела»"
         },
         adresse: {
             de: "Verudela 22, 52100, Pula",
-            ukr: "Верудела, 22, 52100, Пула"
+            uk: "Верудела, 22, 52100, Пула"
         },
         entfernung: 1.6,
         image: artParkVerudelaImage,
@@ -90,11 +90,11 @@ export const spielplatz = [
     {
         name: {
             de: "Pizzerija Peekaboo und Spielplatz innen",
-            ukr: "Піцерія «Peekaboo» та ігровий майданчик у приміщенні"
+            uk: "Піцерія «Peekaboo» та ігровий майданчик у приміщенні"
         },
         adresse: {
             de: "Ul. Svetog Polikarpa 8, 52100, Pula",
-            ukr: "Вул. Св. Полікарпа, 8, 52100, Пула"
+            uk: "Вул. Св. Полікарпа, 8, 52100, Пула"
         },
         entfernung: 2.1,
         image: peekabooImage,

@@ -5,44 +5,44 @@ export const telefonNummer = [
     {
         name:{
             de: "Jana",
-            ukr: "Яна"
+            uk: "Яна"
         },
         telefon: 4915901632722
     },
     {
         name:{
             de: "Andreas",
-            ukr: "Адреас"
+            uk: "Адреас"
         },
-        telefon: 4917623740505
+        telefon: 111111111
     },
     {
         name:{
             de: "Marian",
-            ukr: "Мар'ян"
+            uk: "Мар'ян"
         },
-        telefon: 4915566324171
+        telefon: 111111111
     },
     {
         name:{
             de: "Vera",
-            ukr: "Віра"
+            uk: "Віра"
         },
-        telefon: 495252977674
+        telefon: 1111111111
     },
     {
         name:{
             de: "Ihor",
-            ukr: "Ігор"
+            uk: "Ігор"
         },
-        telefon: 491626615039
+        telefon: 1111111111
     },
     {
         name:{
             de: "Nazar",
-            ukr: "Назар"
+            uk: "Назар"
         },
-        telefon: 48729498910
+        telefon: 1111111111
     }
 ];
 
@@ -50,11 +50,11 @@ const zuhauseJA = [
     {
         name: {
         de: "Andi, Jana, Marian, Rafael",
-        ukr: "Анді, Яна, Мар'ян, Рафаель"
+        uk: "Анді, Яна, Мар'ян, Рафаель"
        },
         adresse:{
-            de: "Pula, 52100, Monte Paradiso 44",
-            ukr: "Пула, 52100, вул. Монте Парадізо 44"
+            de: "Pula, 52100, Monte Paradiso",
+            uk: "Пула, 52100, вул. Монте Парадізо"
         },
         image: [paradiso1Image, paradiso2Image]
     }

@@ -16,7 +16,10 @@ export const restaurants = [
         name: {
             de: "Konoba 'Soprano'",
             uk: "Ресторан 'Сопрано'"},
-        adresse: "Ul. Monte Paradiso 40, 52100, Pula",
+        adresse: {
+            de: "Ul. Monte Paradiso 40, 52100, Pula",
+            uk: "Вул. Монте Парадізо, 40, 52100, Пула"
+        },
         id: "soprano",
         entfernung: 0.17,
         image: sopranoImage
@@ -26,7 +29,10 @@ export const restaurants = [
             de: "Pizzeria 'Asterix'",
             uk: "Піццерія 'Астерікс'"
         },
-        adresse: "Piranesijev prilaz 11, 52100, Pula",
+        adresse: {
+            de: "Piranesijev prilaz 11, 52100, Pula",
+            uk: "Піранесієв прилаз, 11, 52100, Пула"
+        },
         id: "asterix",
         entfernung: 1.0,
         image: asterixImage
@@ -36,7 +42,10 @@ export const restaurants = [
             de: "Pizzeria 'Diego'",
             uk: "Піццерія 'Дієго'"
         },
-        adresse: "Ul. de Franceschijeva 23, 52100, Pula",
+        adresse: {
+            de: "Ul. de Franceschijeva 23, 52100, Pula",
+            uk: "Вул. Франчешєва, 23, 52100, Пула"
+        },
         id: "diego",
         entfernung: 1.1,
         image: diegoImage
@@ -46,7 +55,10 @@ export const restaurants = [
             de: "Fish Food More",
             uk: "Ресторан 'Fish Food More'"
         },
-        adresse: "Rizzijeva ul. 47, 52100, Pula",
+        adresse: {
+            de: "Rizzijeva ul. 47, 52100, Pula",
+            uk: "вул. Ріццієва, 47, 52100, Пула"
+        },
         id: "fishfood",
         entfernung: 1.0,
         image: fishFoodMoreImage
@@ -57,7 +69,10 @@ export const restaurants = [
             uk: "McDonald's Pula"
         },
         isFastfood: true,
-        adresse: "Ulica Rimske Centurijacije 101, 52100, Pula",
+        adresse: {
+            de: "Ulica Rimske Centurijacije 101, 52100, Pula",
+            uk: "вулиця Римських центурій, 101, 52100, Пула"
+        },
         id: "mcdonaldsPula",
         entfernung: 3.8,
         image: mcDonaldsImage
@@ -68,7 +83,10 @@ export const restaurants = [
             uk: "Закусочна 'KebaBoss'"
         },
         isFastfood: true,
-        adresse: "Tomasinijeva ul. 34, 52100, Pula",
+        adresse: {
+            de: "Tomasinijeva ul. 34, 52100, Pula",
+            uk: "вул. Томасінієва, 34, 52100, Пула"
+        },
         id: "kebaboss",
         entfernung: 0.8,
         image: kebabossImage
@@ -79,7 +97,10 @@ export const restaurants = [
             uk: "Закусочна 'Sandwich Club'"
         },
         isFastfood: true,
-        adresse: "Sisplac ul. 4, 52100, Pula",
+        adresse: {
+            de: "Sisplac ul. 4, 52100, Pula",
+            uk: "вул. Сісплац, 4, 52100, Пула"
+        },
         id: "sandwich-club",
         entfernung: 1.2,
         image: sandwichClubImage

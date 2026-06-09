@@ -31,7 +31,7 @@ export default function Nav(){
 
                 <button
                     className="button-lang"
-                    onClick={()=>setLang("ukr")}
+                    onClick={()=>setLang("uk")}
                 >
                     <img src={ukrLang} 
                     alt="Українська" 

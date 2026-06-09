@@ -13,7 +13,7 @@ export const translations = {
         parken: "Parkensmöglichkeiten",
         eintritt: "Eintritt"
     },
-    ukr:{
+    uk:{
         name: "Назва",
         adresse: "Адреса",
         entfernung: "Відстань від дому",
@@ -37,7 +37,7 @@ export const categoryTranslations = {
         spielplatz: "Spielplätze und Parks",
         strands: "Strände"
        },
-    ukr: {
+    uk: {
         aerzte: "Лікарі",
         apotheken: "Аптеки",
         aquaparks: "Аквапарки",
