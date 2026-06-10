@@ -13,7 +13,6 @@ export default function Hause(){
     
     return(
         <>
-            <h1>Here will be info about houses</h1>
             <Card 
                 key={targetHause.id}
                 name={targetHause.name[lang]}

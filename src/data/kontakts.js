@@ -1,5 +1,6 @@
 import paradiso1Image from "../assets/images/kontakts/paradiso1.webp"
 import paradiso2Image from "../assets/images/kontakts/paradiso2.webp"
+import benussiaImage from "../assets/images/kontakts/benussia.webp"
 
 export const telefonNummer = [
     {
@@ -70,7 +71,7 @@ export const benussia =
             de: "Pula, 52100, Matteo Benussi",
             uk: "Пула, 52100, вул. Маттео Бенуссі"
         },
-        image: [paradiso1Image, paradiso2Image],
+        image: [benussiaImage],
         id: "benussia"
     };
 

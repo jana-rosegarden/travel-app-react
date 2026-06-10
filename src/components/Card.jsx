@@ -9,7 +9,7 @@ export default function Card({name, adresse, entfernung, parken, image, oeffnung
     const { de, uk } = translations;
     const {category} = useParams();
     const {hause } = useParams();
-
+    
     return(
         <>
 
@@ -30,11 +30,12 @@ export default function Card({name, adresse, entfernung, parken, image, oeffnung
             </li>
             }
             {hause && 
-            <li> 
-                {name}
-                {adresse}
-                
-            </li>}
+              <li> 
+                <h2> { lang === "de"?  `Haus von ${name}` : `Будинок  ${name}`  } </h2>
+                <h4> {adresse} </h4>
+                <img src={image} alt={adresse} />
+              </li>
+            }
             
         </>
     )
