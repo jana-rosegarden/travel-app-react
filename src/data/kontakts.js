@@ -2,48 +2,54 @@ import paradiso1Image from "../assets/images/kontakts/paradiso1.webp"
 import paradiso2Image from "../assets/images/kontakts/paradiso2.webp"
 import benussiaImage from "../assets/images/kontakts/benussia.webp"
 
-export const telefonNummer = [
+export const telefonnummerParadizo = [
     {
-        name:{
+        person:{
             de: "Jana",
             uk: "Яна"
         },
-        telefon: 1111111111
+        telefon: 1111111111,
+        id: "jana"
     },
     {
-        name:{
+        person:{
             de: "Andreas",
             uk: "Адреас"
         },
-        telefon: 111111111
+        telefon: 111111111,
+        id: "andreas"
     },
     {
-        name:{
+        person:{
             de: "Marian",
             uk: "Мар'ян"
         },
-        telefon: 111111111
+        telefon: 111111111,
+        id: "marian"
     },
     {
-        name:{
+        person:{
             de: "Vera",
             uk: "Віра"
         },
-        telefon: 1111111111
+        telefon: 1111111111,
+        id: "vera"
     },
     {
-        name:{
+        person:{
             de: "Ihor",
             uk: "Ігор"
         },
-        telefon: 1111111111
+        telefon: 1111111111,
+        id: "ihor"
     },
     {
-        name:{
+        person:{
             de: "Nazar",
             uk: "Назар"
         },
-        telefon: 1111111111
+        telefon: 1111111111,
+        id: "nazar"
     }
 ];
 
@@ -58,7 +64,33 @@ export const paradiso =
             uk: "Пула, 52100, вул. Монте Парадізо"
         },
         image: [paradiso1Image],
-        id: "paradiso"
+        id: "paradiso",
+        telefons: [
+                    {
+                person:{
+                    de: "Jana",
+                    uk: "Яна"
+                },
+                telefon: "111-222-333-44",
+                id: "jana"
+            },
+            {
+                person:{
+                    de: "Andreas",
+                    uk: "Адреас"
+                },
+                telefon: "555-666-777-88",
+                id: "andreas"
+            },
+            {
+                person:{
+                    de: "Marian",
+                    uk: "Мар'ян"
+                },
+                telefon: 111111111,
+                id: "999-111-222-33"
+            }
+        ]
     };
 
 export const benussia = 
@@ -72,7 +104,33 @@ export const benussia =
             uk: "Пула, 52100, вул. Маттео Бенуссі"
         },
         image: [benussiaImage],
-        id: "benussia"
+        id: "benussia",
+        telefons: [
+                    {
+                person:{
+                    de: "Vera",
+                    uk: "Віра"
+                },
+                telefon: "444-555-666-77",
+                id: "vera"
+            },
+            {
+                person:{
+                    de: "Ihor",
+                    uk: "Ігор"
+                },
+                telefon: "777-888-999-11",
+                id: "ihor"
+            },
+            {
+                person:{
+                    de: "Nazar",
+                    uk: "Назар"
+                },
+                telefon: "111-222-333-44",
+                id: "nazar"
+            }
+        ]
     };
 
 export const kontaktsData = {

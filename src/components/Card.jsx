@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { translations  } from "../data/translations.js";
 import { LanguageContext } from "../App.jsx";
 
-export default function Card({name, adresse, entfernung, parken, image, oeffnungszeiten, price, alterVon, eintritt, info}){
+export default function Card({name, adresse, entfernung, parken, image, oeffnungszeiten, price, alterVon, eintritt, info, telefons}){
     const {lang, setLang} = useContext(LanguageContext);
     const { de, uk } = translations;
     const {category} = useParams();
@@ -34,7 +34,18 @@ export default function Card({name, adresse, entfernung, parken, image, oeffnung
                 <h2> { lang === "de"?  `Haus von ${name}` : `Будинок  ${name}`  } </h2>
                 <h4> {adresse} </h4>
                 <img src={image} alt={adresse} />
+                <ul>
+                    {telefons.map(item=>{
+                        return(
+                            <li key={item.id}> 
+                                <h5>{item.person[lang]}</h5>
+                                <h6>{item.telefon} </h6>
+                            </li>
+                        )
+                    })}
+                </ul>
               </li>
+              
             }
             
         </>

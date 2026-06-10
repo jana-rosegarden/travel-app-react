@@ -18,6 +18,7 @@ export default function Hause(){
                 name={targetHause.name[lang]}
                 adresse={targetHause.adresse[lang]}
                 image={targetHause.image}
+                telefons= {targetHause.telefons}
                 />
         </>
     )
