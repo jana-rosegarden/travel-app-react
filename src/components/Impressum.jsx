@@ -1,12 +1,26 @@
+import { useContext } from "react";
+import { LanguageContext } from "../App";
+
+import { footer } from "../data/translations.js";
+
 
 export default function Impressum({toggleDaten, toggleImpressum, showDaten, showImpressum}){
+    const {lang, setLang} = useContext(LanguageContext);
+    //console.log(footer.impressum[lang])
+
+
     return(
             <>
                 <div > 
                     <h3 onClick={toggleDaten}>Datenschutzerklärung</h3>
                     {showDaten && 
                     <div>
-                        <p>
+                        {footer.datenschutz[lang].map(item=>{
+                            return(
+                                <p key={item.id}>{item.text}</p>
+                            )
+                        })}
+                        {/*<p>
                             Diese Webseite erhebt keine personenbezogenen Daten und verwendet keine Cookies oder Tracking-Tools.
                             Es werden keine externen Dienste wie Google Analytics, YouTube, Facebook oder ähnliche Anbieter eingebunden.
                         </p>
@@ -20,7 +34,7 @@ export default function Impressum({toggleDaten, toggleImpressum, showDaten, show
                             Josef-Priller-Str. 20<br />
                             86159 Augsburg<br />
                             E-Mail: jana@engenhor.st <br />
-                        </p>
+                        </p> */}
                     </div>
                     }
 
@@ -28,9 +42,14 @@ export default function Impressum({toggleDaten, toggleImpressum, showDaten, show
                     <h3 onClick={toggleImpressum}> Impressum </h3>
                     {showImpressum && 
                         <div > 
-                            <p>Jana Engenhorst</p>
+                            {footer.impressum[lang].map(item =>{
+                                return(
+                                    <p key={item.id}>{item.text}</p>
+                                )
+                            })}
+                            {/*<p>Jana Engenhorst</p>
                             <p>Josef-Priller-Str. 20, 86159 Augsburg </p>
-                            <p>jana@engenhor.st</p>
+                            <p>jana@engenhor.st</p> */}
                         </div>
                     }
                     </div>
