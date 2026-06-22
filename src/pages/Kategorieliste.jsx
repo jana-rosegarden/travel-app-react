@@ -50,6 +50,7 @@ export default function Kategorieliste(){
                 })}
                 
             </ul>
+           
             <Impressum 
                 toggleDaten={handleToggleDaten}
                 toggleImpressum={handleToggleImpressum}

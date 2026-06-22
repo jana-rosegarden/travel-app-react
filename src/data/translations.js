@@ -13,7 +13,8 @@ export const translations = {
         parken: "Parkensmöglichkeiten",
         eintritt: "Eintritt",
         datenschutz: "Datenschutzerklärung",
-        impressum: "impressum"
+        impressum: "impressum",
+        notruf: "Notrufnummern in Pula"
     },
     uk:{
         name: "Назва",
@@ -26,7 +27,8 @@ export const translations = {
         parken: "Парковка",
         eintritt: "Вхід",
         datenschutz: "Політика конфіденційності",
-        impressum: "Вихідні дані"
+        impressum: "Вихідні дані",
+        notruf: "Номера екстреної служби в Пулі"
     }
 };
 
