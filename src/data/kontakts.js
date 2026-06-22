@@ -8,7 +8,7 @@ export const telefonnummerParadizo = [
             de: "Jana",
             uk: "Яна"
         },
-        telefon: 1111111111,
+        telefon: "+491111111111",
         id: "jana"
     },
     {
@@ -16,7 +16,7 @@ export const telefonnummerParadizo = [
             de: "Andreas",
             uk: "Адреас"
         },
-        telefon: 111111111,
+        telefon: "+49111111111",
         id: "andreas"
     },
     {
@@ -24,7 +24,7 @@ export const telefonnummerParadizo = [
             de: "Marian",
             uk: "Мар'ян"
         },
-        telefon: 111111111,
+        telefon: "+49111111111",
         id: "marian"
     },
     {
@@ -32,7 +32,7 @@ export const telefonnummerParadizo = [
             de: "Vera",
             uk: "Віра"
         },
-        telefon: 1111111111,
+        telefon: "+491111111111",
         id: "vera"
     },
     {
@@ -40,7 +40,7 @@ export const telefonnummerParadizo = [
             de: "Ihor",
             uk: "Ігор"
         },
-        telefon: 1111111111,
+        telefon: "+491111111111",
         id: "ihor"
     },
     {
@@ -48,7 +48,7 @@ export const telefonnummerParadizo = [
             de: "Nazar",
             uk: "Назар"
         },
-        telefon: 1111111111,
+        telefon: "+491111111111",
         id: "nazar"
     }
 ];
@@ -71,7 +71,7 @@ export const paradiso =
                     de: "Jana",
                     uk: "Яна"
                 },
-                telefon: "111-222-333-44",
+                telefon: "+4911122233344",
                 id: "jana"
             },
             {
@@ -79,7 +79,7 @@ export const paradiso =
                     de: "Andreas",
                     uk: "Адреас"
                 },
-                telefon: "555-666-777-88",
+                telefon: "+4955566677788",
                 id: "andreas"
             },
             {
@@ -87,7 +87,7 @@ export const paradiso =
                     de: "Marian",
                     uk: "Мар'ян"
                 },
-                telefon: 111111111,
+                telefon: "+49111111111",
                 id: "999-111-222-33"
             }
         ]
@@ -111,7 +111,7 @@ export const benussia =
                     de: "Vera",
                     uk: "Віра"
                 },
-                telefon: "444-555-666-77",
+                telefon: "+4944455566677",
                 id: "vera"
             },
             {
@@ -119,7 +119,7 @@ export const benussia =
                     de: "Ihor",
                     uk: "Ігор"
                 },
-                telefon: "777-888-999-11",
+                telefon: "+4977788899911",
                 id: "ihor"
             },
             {
@@ -127,7 +127,7 @@ export const benussia =
                     de: "Nazar",
                     uk: "Назар"
                 },
-                telefon: "111-222-333-44",
+                telefon: "+4911122233344",
                 id: "nazar"
             }
         ]

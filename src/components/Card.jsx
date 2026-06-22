@@ -39,7 +39,7 @@ export default function Card({name, adresse, entfernung, parken, image, oeffnung
                         return(
                             <li key={item.id}> 
                                 <h5>{item.person[lang]}</h5>
-                                <h6>{item.telefon} </h6>
+                                <h6><a href={`tel:${item.telefon}`}>{item.telefon}</a>{} </h6>
                             </li>
                         )
                     })}
