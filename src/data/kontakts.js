@@ -1,6 +1,12 @@
-import paradiso1Image from "../assets/images/kontakts/paradiso1.webp"
-import paradiso2Image from "../assets/images/kontakts/paradiso2.webp"
-import benussiaImage from "../assets/images/kontakts/benussia.webp"
+import paradiso1Image from "../assets/images/kontakts/paradiso1.webp";
+import paradiso2Image from "../assets/images/kontakts/paradiso2.webp";
+import benussiaImage from "../assets/images/kontakts/benussia.webp";
+
+import allgemeinerImage from "../assets/images/notruf/allgemeiner.webp";
+import polizeiImage from "../assets/images/notruf/polizei.webp"
+import rettungsdienstImage from "../assets/images/notruf/rettungsdienst.webp"
+import paradisoImage from "../assets/images/notruf/paradiso.webp"
+import benussia2Image from "../assets/images/notruf/benussia2.webp"
 
 export const telefonnummerParadizo = [
     {
@@ -136,4 +142,47 @@ export const benussia =
 export const kontaktsData = {
      paradiso,
      benussia
-}
+};
+
+export const notfallNummer = [
+   {name: {
+        de: "Allgemeiner Notruf",
+        uk: "Загальний номер екстреної допомоги"
+        },
+    telefon: "112",
+    id: "1-112",
+    image: allgemeinerImage
+    },
+    {name: {
+        de: "Polizei",
+        uk: "Поліція"
+        },
+    telefon: "192",
+    id: "2-192",
+    image: polizeiImage
+    },
+    {name: {
+        de: "Rettungsdienst",
+        uk: "Служба швидкої допомоги"
+        },
+    telefon: "194",
+    id: "3-194",
+    image: rettungsdienstImage
+    },
+    {name: {
+        de: "Gastgeber in Monte Paradiso, Michael",
+        uk: "Господар у Монте-Парадізо, Міхаель"
+        },
+    telefon: "+38500000000",
+    id: "4-38500000000",
+    image: paradisoImage
+    },
+    {name: {
+        de: "Gastgeber in Mattea Benussia, Irena",
+        uk: "Господарі в Маттеа Бенусія, Ірена"
+        },
+    telefon: "+38511111111",
+    id: "5-38511111111",
+    image: benussia2Image
+    }
+];
