@@ -3,17 +3,21 @@ import { useParams } from "react-router-dom"
 import { useContext, useState } from "react";
 
 import { LanguageContext } from "../App.jsx";
+import { EmergencyTelContex } from "../App.jsx";
 
 import { categoryData } from "../data/categoryData.js";
 import { categoryTranslations } from "../data/translations.js";
 
 import Card from "../components/Card.jsx";
 import Impressum from "../components/Impressum.jsx";
+import Liste from "../components/Liste.jsx";
 
 export default function Kategorieliste(){
     const {category} = useParams();
 
     const {lang, setLang } = useContext(LanguageContext);
+    const {showNotfallNummern, setShowNotfallNummern} = useContext(EmergencyTelContex);
+
     const { de, uk } = categoryTranslations;
     
     const[isOpenDaten, setOpenDaten] = useState(false);
@@ -28,6 +32,7 @@ export default function Kategorieliste(){
 
     return(
         <> 
+            {showNotfallNummern && <Liste/>}
             <ul>
                 <h1>{lang === "de"? `${de[category]} in der Nähe` : `${uk[category]} поблизу`}  </h1>
                 {categoryData[category].map(item=>{
