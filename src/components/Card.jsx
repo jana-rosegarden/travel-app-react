@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
+import { FaHeart, FaRegHeart } from "react-icons/fa";
 
 import { translations  } from "../data/translations.js";
 import { LanguageContext } from "../App.jsx";
@@ -15,7 +16,7 @@ export default function Card({name, adresse, entfernung, parken, image, oeffnung
 
             {category && 
             <li>
-               
+               <FaHeart />
                {lang === "uk"? <h2> {uk.name} : {name.uk} </h2> : <h2>{de.name}: {name.de}</h2>}
                {image && <img src={image} alt={name[lang]} />}
                {info && <p> <span>{lang === "uk" ? uk.info : de.info} : </span>  {info[lang]} </p>}
@@ -33,6 +34,7 @@ export default function Card({name, adresse, entfernung, parken, image, oeffnung
               <li> 
                 <h2> { lang === "de"?  `Haus von ${name}` : `Будинок  ${name}`  } </h2>
                 <h4> {adresse} </h4>
+                <h5 className="testIcon">♡ Zu </h5>
                 <img src={image} alt={adresse} />
                 <ul>
                     {telefons.map(item=>{
