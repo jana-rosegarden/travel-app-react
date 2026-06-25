@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { useContext, useState } from "react";
 
 import { LanguageContext } from "../App";
-import { EmergencyTelContex } from "../App";
+import { EmergencyTelContext } from "../App";
 import Card from "../components/Card";
 import Impressum from "../components/Impressum.jsx";
 import Minicard from "../components/Minicard.jsx";
@@ -13,7 +13,7 @@ import { kontaktsData } from "../data/kontakts.js";
 export default function Hause(){
     const { hause } = useParams();
     const {lang, setLang} = useContext(LanguageContext);
-    const {showNotfallNummern, setShowNotfallNummern} = useContext(EmergencyTelContex);
+    const {showNotfallNummern, setShowNotfallNummern} = useContext(EmergencyTelContext);
     const[isOpenDaten, setOpenDaten] = useState(false);
     const [isOpenImpressum, setOpenImpressum] = useState(false);
 

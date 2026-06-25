@@ -6,13 +6,13 @@ import ukrLang from "../assets/images/icons/ukr.webp"
 import { useContext } from "react";
 
 import { LanguageContext } from "../App.jsx";
-import { EmergencyTelContex } from "../App.jsx";
+import { EmergencyTelContext } from "../App.jsx";
 
 import { translations } from "../data/translations.js";
 
 export default function Nav(){
     const {lang, setLang} = useContext(LanguageContext);
-    const {showNotfallNummern, setShowNotfallNummern} = useContext(EmergencyTelContex);
+    const {showNotfallNummern, setShowNotfallNummern} = useContext(EmergencyTelContext);
 
     function toggleShowNotfallNummer(){
         setShowNotfallNummern(prev => !prev)

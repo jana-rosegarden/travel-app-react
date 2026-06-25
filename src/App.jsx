@@ -12,19 +12,23 @@ import Hause from './pages/Hause.jsx';
 import Kategorieliste from './pages/Kategorieliste.jsx';
 
 export const LanguageContext = createContext();
-export const EmergencyTelContex = createContext();
+export const EmergencyTelContext = createContext();
+export const UsersContext = createContext();
 
 function App() {
   const [lang, setLang] = useState(localStorage.getItem("language") || "de");
   const [showNotfallNummern, setShowNotfallNummern] = useState(false);
-  
+  const [currentUser, setCurrentUser] = useState(localStorage.getItem("user") || "");
+  console.log(currentUser)
   useEffect(()=>{
     localStorage.setItem("language", lang)
   }, [lang])
 
   return (
       <LanguageContext. Provider value={{lang, setLang}}> 
-      <EmergencyTelContex.Provider value={{showNotfallNummern, setShowNotfallNummern}}> 
+      <UsersContext. Provider value={{currentUser, setCurrentUser}}> 
+      <EmergencyTelContext.Provider value={{showNotfallNummern, setShowNotfallNummern}}> 
+      
       <BrowserRouter>
           <Header />
           <Nav />
@@ -38,7 +42,9 @@ function App() {
 
 
       </BrowserRouter>
-      </EmergencyTelContex.Provider>
+
+      </EmergencyTelContext.Provider>
+      </UsersContext.Provider> 
       </LanguageContext. Provider>
   )
 }

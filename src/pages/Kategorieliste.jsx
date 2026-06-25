@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom"
 import { useContext, useState } from "react";
 
 import { LanguageContext } from "../App.jsx";
-import { EmergencyTelContex } from "../App.jsx";
+import { EmergencyTelContext } from "../App.jsx";
 
 import { categoryData } from "../data/categoryData.js";
 import { categoryTranslations } from "../data/translations.js";
@@ -16,7 +16,7 @@ export default function Kategorieliste(){
     const {category} = useParams();
 
     const {lang, setLang } = useContext(LanguageContext);
-    const {showNotfallNummern, setShowNotfallNummern} = useContext(EmergencyTelContex);
+    const {showNotfallNummern, setShowNotfallNummern} = useContext(EmergencyTelContext);
 
     const { de, uk } = categoryTranslations;
     
