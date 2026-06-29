@@ -1,25 +1,46 @@
 import { Link } from "react-router-dom"
-import { useState } from "react";
+import { useState, useContext } from "react";
 
 import deLang from "../assets/images/icons/de.webp";
 import ukrLang from "../assets/images/icons/ukr.webp"
-import { useContext } from "react";
 
 import { LanguageContext } from "../App.jsx";
 import { EmergencyTelContext } from "../App.jsx";
+import { UsersContext } from "../App.jsx";
+
+import UsersModal from "./UsersModal.jsx";
 
 import { translations } from "../data/translations.js";
 
 export default function Nav(){
     const {lang, setLang} = useContext(LanguageContext);
     const {showNotfallNummern, setShowNotfallNummern} = useContext(EmergencyTelContext);
+    const {currentUser, setCurrentUser} = useContext(UsersContext);
+
+    //const [isUserSubmit, setIsUserSubmit] = useState(localStorage.getItem("isUserSubmit") === "true");
 
     function toggleShowNotfallNummer(){
         setShowNotfallNummern(prev => !prev)
     };
+
+    {/* 
+    function submitUsersName(){
+        
+        setIsUserSubmit(true)
+        localStorage.setItem("isUserSubmit", true)
+        localStorage.setItem("user", currentUser)
+    };
+    */}
+    
+    function changeUsersName(){
+        setCurrentUser("");
+        localStorage.removeItem("user");
+    };
+    
     
     return(
-        <nav className="nav-haupt">
+        <>
+            <nav className="nav-haupt">
             <div className="div-hauses">
                 <Link to="/"> {lang === "de" ? "Home" : "Головна"} </Link>
                 <Link to="/house/paradiso"> {lang === "de" ? "Haus Monte Paradiso" : "Будинок Monte Paradiso: Яна та Анді"} </Link>
@@ -29,6 +50,16 @@ export default function Nav(){
                 onClick={toggleShowNotfallNummer}
             > {translations[lang].notruf}
             </button>
+
+            {currentUser && <>
+                                <h2>Hallo, {currentUser}!</h2>
+                                <button type="button"
+                                onClick={changeUsersName}
+                                >Name ändern</button>
+                            </>
+            }
+            
+
             <div className="div-lang">
                 <button
                   className="button-lang"
@@ -49,5 +80,11 @@ export default function Nav(){
                 </button>
             </div>
         </nav>
+        <UsersModal 
+             
+
+        />
+        </>
+        
     )
 }

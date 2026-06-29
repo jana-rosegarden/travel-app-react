@@ -22,7 +22,7 @@ export default function Home(){
 
     return(
         <>
-         <UsersModal />
+         
          {showNotfallNummern && <Liste />}
          <Main />
           <Impressum 

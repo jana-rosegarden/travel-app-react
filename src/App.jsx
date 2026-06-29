@@ -18,8 +18,8 @@ export const UsersContext = createContext();
 function App() {
   const [lang, setLang] = useState(localStorage.getItem("language") || "de");
   const [showNotfallNummern, setShowNotfallNummern] = useState(false);
-  const [currentUser, setCurrentUser] = useState(localStorage.getItem("user") || "");
-  console.log(currentUser)
+  const [currentUser, setCurrentUser] = useState(localStorage.getItem("user"));
+  
   useEffect(()=>{
     localStorage.setItem("language", lang)
   }, [lang])

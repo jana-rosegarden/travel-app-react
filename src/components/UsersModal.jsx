@@ -1,50 +1,45 @@
 import { useContext, useState } from "react";
 import { UsersContext } from "../App";
 
+import { users } from "../data/users.js";
+
 export default function UsersModal(){
     const {currentUser, setCurrentUser} = useContext(UsersContext);
-    const [isUserSubmit, setIsUserSubmit] = useState(false);
+    const [inputUser, setInputUser] = useState("");
     
-    function getUser(e){
-        setCurrentUser(e.target.value)
-        e.target.value = ""
+
+    function handleSubmit(e) {
+         e.preventDefault();
+
+        if (inputUser.trim() === "") return;
+
+        setCurrentUser(inputUser);
+        localStorage.setItem("user", inputUser);
     };
 
-    function showUsersName(){
-        setIsUserSubmit(true)
-    };
-    function changeUsersName(){
-        setIsUserSubmit(false)
-        setCurrentUser("")
-    };
-
-    localStorage.setItem("user", currentUser);
-
-    
     return(
         <>
             <div>
-                {!isUserSubmit && 
-                <form>
+                {!currentUser && 
+                <form onSubmit={handleSubmit}>
                     <label htmlFor="usersname"> Hallo! Wie heißt du? </label>
                         
                     <input 
                            type="text" 
                            id="usersname"
-                           value={currentUser }
-                           onChange={getUser}/>
-                    <input type="button" 
+                           value={inputUser}
+                           onChange={(e)=>{setInputUser(e.target.value)
+                                           
+                           }}/>
+                    <input type="submit" 
                            value="Absenden!" 
-                           onClick={showUsersName}
+                           disabled={inputUser.trim()===""}
                            />
-
                 </form>
                 }
-                {isUserSubmit && <> 
+                {currentUser && <> 
                                 <h3>Willkommen an Board, {currentUser}! </h3> 
-                                <button type="button"
-                                onClick={changeUsersName}
-                                >Name ändern</button>
+                                
                 </>
                 }
                 
