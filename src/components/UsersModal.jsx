@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { UsersContext } from "../App";
 
 import { users } from "../data/users.js";
@@ -6,6 +6,7 @@ import { users } from "../data/users.js";
 export default function UsersModal(){
     const {currentUser, setCurrentUser} = useContext(UsersContext);
     const [inputUser, setInputUser] = useState("");
+    const [modalMessage, setModalMessage] = useState("");
     
 
     function handleSubmit(e) {
@@ -15,8 +16,28 @@ export default function UsersModal(){
 
         setCurrentUser(inputUser);
         localStorage.setItem("user", inputUser);
+        
+        setModalMessage(`Willkommen an Board, ${inputUser}!`);
+        setTimeout(()=>{
+            setModalMessage("")
+        }, 2000);
     };
 
+    {/*
+    useEffect(()=>{
+        if (!showWelcome) return;
+        
+        
+
+        let closeMessage= setTimeout(()=>{
+            setModalMessage("")
+        }, 2000);
+        return()=>{
+            
+            clearTimeout(closeMessage)
+        };
+    },[currentUser]);
+    */}
     return(
         <>
             <div>
@@ -37,9 +58,8 @@ export default function UsersModal(){
                            />
                 </form>
                 }
-                {currentUser && <> 
-                                <h3>Willkommen an Board, {currentUser}! </h3> 
-                                
+                {currentUser && <>  
+                                <h3>{modalMessage}</h3>
                 </>
                 }
                 

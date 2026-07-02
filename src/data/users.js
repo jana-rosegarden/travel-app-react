@@ -1,9 +1,14 @@
-export const users = [
-    {id: "",
-     name: ""
-    }
-]
+export const users = [];
 
-localStorage.getItem("user")
-console.log(localStorage.getItem("user"))
-console.log("Hallo")
+let newUser = localStorage.getItem("user");
+console.log(newUser)
+
+if(localStorage.getItem("user")){
+    users.push({name: localStorage.getItem("user"),
+                id: localStorage.getItem("user").toLowerCase(),
+                favorites: []
+     })
+};
+
+console.log(users)
+

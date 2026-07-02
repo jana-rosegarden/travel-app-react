@@ -16,7 +16,8 @@ export default function Card({name, adresse, entfernung, parken, image, oeffnung
 
             {category && 
             <li>
-               <FaHeart />
+               <FaRegHeart className="test-icon"/>
+               <FaHeart className="test-icon-2"/>
                {lang === "uk"? <h2> {uk.name} : {name.uk} </h2> : <h2>{de.name}: {name.de}</h2>}
                {image && <img src={image} alt={name[lang]} />}
                {info && <p> <span>{lang === "uk" ? uk.info : de.info} : </span>  {info[lang]} </p>}

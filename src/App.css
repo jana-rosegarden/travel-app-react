@@ -69,6 +69,7 @@ body{
     letter-spacing: 0.2em;
     box-shadow: 0 0 10px rgb(56, 203, 229);
 }
-.testIcon{
+
+.test-icon{
     color: red;
 }
