@@ -15,17 +15,10 @@ import { translations } from "../data/translations.js";
 export default function Nav(){
     const {lang, setLang} = useContext(LanguageContext);
     const {showNotfallNummern, setShowNotfallNummern} = useContext(EmergencyTelContext);
-    const {familyMember, setFamilyMember} = useContext(UsersContext);
-    let greetUser = "";
-
-     const usersLocalStorage = JSON.parse(localStorage.getItem("users")) || [];
-     if(usersLocalStorage) {const user = usersLocalStorage.find(item => {
-        return item.name === familyMember
-     })
-      
-      greetUser = user.username ? user.username : user.name;
-      
-    };
+    const {familyMember, setFamilyMember, displayName} = useContext(UsersContext);
+    
+    
+     
      
     //const [isUserSubmit, setIsUserSubmit] = useState(localStorage.getItem("isUserSubmit") === "true");
 
@@ -62,7 +55,7 @@ export default function Nav(){
             </button>
 
             {familyMember && <>
-                                <h2>Hallo, {greetUser}!</h2>
+                                <h2>Hallo, {displayName}!</h2>
                                 <button type="button"
                                 onClick={changeUsersName}
                                 >Name ändern</button>

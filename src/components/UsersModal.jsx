@@ -19,17 +19,39 @@ export default function UsersModal(){
          e.preventDefault();
 
         if (inputUser.trim() === "") return;
-
         setCurrentUserName(inputUser);
         //localStorage.setItem("user", inputUser);
+        setFamilyMember((prev) => {return {...prev, username: inputUser}});
         
+        //Update current User:
+        const currentUser = JSON.parse(localStorage.getItem("user"))
+        const updatedUser = {...currentUser, username: inputUser};
+        localStorage.setItem("user", JSON.stringify(updatedUser));
+
+
+        //localStorage.setItem("user", JSON.stringify(familyMember))
+        const storedUsers = localStorage.getItem("users");
+        const usersLocalStorage = JSON.parse(storedUsers);
+        //const currentUser = familyMember;
+        console.log(updatedUser)
+        const updatedUsers = usersLocalStorage.map(item => 
+        item.name === updatedUser.name ? {...item, username: inputUser} : item
+       );
+       localStorage.setItem("users", JSON.stringify(updatedUsers));
+
+
+
+       //localStorage.setItem("users", JSON.stringify(updatedUsers))
+       //localStorage.setItem("users", "test")
+       
+
         setModalMessageUserName(`Willkommen an Board, ${inputUser}!`);
         setTimeout(()=>{
             setModalMessageUserName("")
         }, 2000);
 
         setCloseElement(true);
-
+      
 
         /*const newUser = {
             id: inputUser.trim().toLowerCase(),
@@ -48,27 +70,19 @@ export default function UsersModal(){
             localStorage.setItem("users", JSON.stringify(usersLocalStorage))
         };
         */
-       const storedUsers = localStorage.getItem("users");
-       const usersLocalStorage = JSON.parse(localStorage.getItem("users"));
-       const currentUser = familyMember;
-    
-       const updatedUsers = usersLocalStorage.map(item => 
-        item.name === currentUser ? {...item, username: inputUser} : item
-       );
-       localStorage.setItem("users", JSON.stringify(updatedUsers))
+       
        
     };
+    
     function handleSelectFamilyMember(e){
-        
-        setFamilyMember(e.target.value);
-        localStorage.setItem("user", e.target.value);
-
         const newUser = {
             id: e.target.value.toLowerCase(),
             name: e.target.value,
             username: "",
             favorites: []
         };
+        setFamilyMember(newUser);
+        localStorage.setItem("user", JSON.stringify(newUser));
 
         const storedUsers = localStorage.getItem("users");
         const usersLocalStorage = storedUsers? JSON.parse(storedUsers) : [];
@@ -83,8 +97,9 @@ export default function UsersModal(){
     
 
     function toggleElement(){
+        
         setCloseElement(true);
-        setModalMessageTwo(`Willkommen on Bord, ${familyMember}`)
+        setModalMessageTwo(`Willkommen on Bord, ${familyMember.name}`)
     };
     
 
@@ -136,7 +151,7 @@ export default function UsersModal(){
                     <label htmlFor="familyMember">Hallo! Wie heißt du?</label>
                     <select 
                     id="familyMember"
-                    value={familyMember}
+                    value=""
                     onChange={handleSelectFamilyMember}>
                         <option value="" disabled hidden>👤 Bitte wähle deinen Namen aus</option>
                         <option value="Andi">Andi</option>
@@ -151,7 +166,7 @@ export default function UsersModal(){
                             
                                     {!closeElement && 
                                     <>
-                                    <h4>{`Hallo, ${familyMember}!`}</h4>
+                                    <h4>{`Hallo, ${familyMember.name}!`}</h4>
                                     <h5>Möchtest du Benutzername auswählen?</h5>
                                     <form onSubmit={handleSubmitUsername}>
                                         <label htmlFor="benutzerName"> Dein Benutzername hier: </label>
