@@ -18,7 +18,19 @@ export const UsersContext = createContext();
 function App() {
   const [lang, setLang] = useState(localStorage.getItem("language") || "de");
   const [showNotfallNummern, setShowNotfallNummern] = useState(false);
-  const [currentUser, setCurrentUser] = useState(localStorage.getItem("user"));
+  //const [familyMember, setFamilyMember] = useState(localStorage.getItem("user"));
+  const [familyMember, setFamilyMember] = useState(localStorage.getItem("user")|| "");
+  
+  let greetUser = "";
+
+     const usersLocalStorage = JSON.parse(localStorage.getItem("users")) || [];
+     if(usersLocalStorage) {const user = usersLocalStorage.find(item => {
+        return item.name === familyMember
+     })
+      
+      greetUser = user.username ? user.username : user.name;
+      
+    };
   
   useEffect(()=>{
     localStorage.setItem("language", lang)
@@ -26,7 +38,7 @@ function App() {
 
   return (
       <LanguageContext. Provider value={{lang, setLang}}> 
-      <UsersContext. Provider value={{currentUser, setCurrentUser}}> 
+      <UsersContext. Provider value={{familyMember, setFamilyMember}}> 
       <EmergencyTelContext.Provider value={{showNotfallNummern, setShowNotfallNummern}}> 
       
       <BrowserRouter>
