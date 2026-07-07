@@ -1,7 +1,7 @@
 export const users = [];
 
 let newUser = localStorage.getItem("user");
-console.log(newUser)
+
 
 if(localStorage.getItem("user")){
     users.push({name: localStorage.getItem("user"),
@@ -10,5 +10,5 @@ if(localStorage.getItem("user")){
      })
 };
 
-console.log(users)
+
 

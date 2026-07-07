@@ -21,6 +21,24 @@ export default function UsersModal(){
         setTimeout(()=>{
             setModalMessage("")
         }, 2000);
+
+        
+        const newUser = {
+            id: inputUser.trim().toLowerCase(),
+            name: inputUser,
+            favorites: []
+        };
+        const storedUsers = localStorage.getItem("users");
+
+        const usersLocalStorage = storedUsers? JSON.parse(storedUsers) : [];
+
+        const alreadyExists = usersLocalStorage.some(item=>{
+            return item.id === newUser.id
+        });
+        if(alreadyExists === false){
+            usersLocalStorage.push(newUser)
+            localStorage.setItem("users", JSON.stringify(usersLocalStorage))
+        };
     };
 
     {/*
