@@ -5,53 +5,46 @@ import { users } from "../data/users.js";
 
 export default function UsersModal(){
     //const {currentUser, setCurrentUser} = useContext(UsersContext);
-
+    const {familyMember, setFamilyMember} = useContext(UsersContext);
     const [inputUser, setInputUser] = useState("");
+    const [userName, setUserName] = useState("");
+
     const [modalMessageUserName, setModalMessageUserName] = useState("");
     //Branch select-form
-    const {familyMember, setFamilyMember} = useContext(UsersContext);
+    const [modalMessageFamilyMember, setModalMessageFamilyMember] = useState("");
     //const [familyMember, setFamilyMember] = useState("");
-    const [currentUsername, setCurrentUserName] = useState();
-    const [modalMessageTwo, setModalMessageTwo] = useState("");
-    const [closeElement, setCloseElement] = useState(false);
+    
+
+    const showUsernameForm =
+    familyMember &&
+    !familyMember.username &&
+    !familyMember.isUserNameRejected;
 
     function handleSubmitUsername(e) {
          e.preventDefault();
 
         if (inputUser.trim() === "") return;
-        setCurrentUserName(inputUser);
-        //localStorage.setItem("user", inputUser);
+        
         setFamilyMember((prev) => {return {...prev, username: inputUser}});
         
         //Update current User:
         const currentUser = JSON.parse(localStorage.getItem("user"))
         const updatedUser = {...currentUser, username: inputUser};
         localStorage.setItem("user", JSON.stringify(updatedUser));
-
-
-        //localStorage.setItem("user", JSON.stringify(familyMember))
+        //Update Users:
         const storedUsers = localStorage.getItem("users");
         const usersLocalStorage = JSON.parse(storedUsers);
-        //const currentUser = familyMember;
-        console.log(updatedUser)
+        
         const updatedUsers = usersLocalStorage.map(item => 
         item.name === updatedUser.name ? {...item, username: inputUser} : item
-       );
-       localStorage.setItem("users", JSON.stringify(updatedUsers));
+        );
+        localStorage.setItem("users", JSON.stringify(updatedUsers));
 
-
-
-       //localStorage.setItem("users", JSON.stringify(updatedUsers))
-       //localStorage.setItem("users", "test")
-       
 
         setModalMessageUserName(`Willkommen an Board, ${inputUser}!`);
         setTimeout(()=>{
             setModalMessageUserName("")
         }, 2000);
-
-        setCloseElement(true);
-      
 
         /*const newUser = {
             id: inputUser.trim().toLowerCase(),
@@ -74,10 +67,12 @@ export default function UsersModal(){
        
     };
     
+
     function handleSelectFamilyMember(e){
         const newUser = {
             id: e.target.value.toLowerCase(),
             name: e.target.value,
+            isUserNameRejected: false,
             username: "",
             favorites: []
         };
@@ -95,57 +90,26 @@ export default function UsersModal(){
         };
     };
     
-
-    function toggleElement(){
+     function noUserNameWished(){
         
-        setCloseElement(true);
-        setModalMessageTwo(`Willkommen on Bord, ${familyMember.name}`)
-    };
+        const updatedUser = {
+            ...familyMember,
+            isUserNameRejected: true
+       };
+
+       setFamilyMember(updatedUser);
+
+       localStorage.setItem(
+        "user",
+         JSON.stringify(updatedUser)
+        );
+     }
+
     
-
-
-    {/*
-    useEffect(()=>{
-        if (!showWelcome) return;
-        
-        
-
-        let closeMessage= setTimeout(()=>{
-            setModalMessage("")
-        }, 2000);
-        return()=>{
-            
-            clearTimeout(closeMessage)
-        };
-    },[currentUser]);
-    */}
     return(
         <>
             <div>
-                {/*
-                {!currentUser && 
-                <form onSubmit={handleSubmit}>
-                    <label htmlFor="usersname"> Hallo! Wie heißt du? </label>
-                        
-                    <input 
-                           type="text" 
-                           id="usersname"
-                           value={inputUser}
-                           onChange={(e)=>{setInputUser(e.target.value)
-                                           
-                           }}/>
-                    <input type="submit" 
-                           value="Absenden!" 
-                           disabled={inputUser.trim()===""}
-                           />
-                </form>
-                }
-                {currentUser && <>  
-                                <h3>{modalMessage}</h3>
-                </>
-                }
-                */}
-
+                
                 {!familyMember &&
                 <form >
                     <label htmlFor="familyMember">Hallo! Wie heißt du?</label>
@@ -164,7 +128,7 @@ export default function UsersModal(){
                 
                 {familyMember && <article>
                             
-                                    {!closeElement && 
+                                    {showUsernameForm && 
                                     <>
                                     <h4>{`Hallo, ${familyMember.name}!`}</h4>
                                     <h5>Möchtest du Benutzername auswählen?</h5>
@@ -184,7 +148,7 @@ export default function UsersModal(){
                                         {inputUser.trim()==="" && 
                                         <input type="button" 
                                                value="Nein, danke"
-                                               onClick={toggleElement}
+                                               onClick={noUserNameWished}
                                                />
                                         }
                                     </form>
@@ -193,7 +157,7 @@ export default function UsersModal(){
                                 </article>}
                 
 
-                {modalMessageTwo && <h4>{modalMessageTwo}</h4>}
+                {modalMessageFamilyMember && <h4>{modalMessageFamilyMember}</h4>}
                 {modalMessageUserName && <h4>{modalMessageUserName}</h4>}
             </div>
         </>

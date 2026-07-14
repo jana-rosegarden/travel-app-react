@@ -17,9 +17,6 @@ export default function Nav(){
     const {showNotfallNummern, setShowNotfallNummern} = useContext(EmergencyTelContext);
     const {familyMember, setFamilyMember, displayName} = useContext(UsersContext);
     
-    
-     
-     
     //const [isUserSubmit, setIsUserSubmit] = useState(localStorage.getItem("isUserSubmit") === "true");
 
     function toggleShowNotfallNummer(){
@@ -36,8 +33,9 @@ export default function Nav(){
     */}
     
     function changeUsersName(){
-        setCurrentUser("");
+        //setCurrentUser("");
         localStorage.removeItem("user");
+        setFamilyMember(null);
     };
     
     
