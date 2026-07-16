@@ -39,6 +39,7 @@ export default function Kategorieliste(){
                     return(
                         <Card
                             key={item.id}
+                            id={item.id}
                             name={item.name} 
                             adresse={item.adresse || undefined}
                             entfernung={item.entfernung || undefined}

@@ -1,23 +1,59 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 
 import { translations  } from "../data/translations.js";
 import { LanguageContext } from "../App.jsx";
+import { UsersContext } from "../App.jsx";
 
-export default function Card({name, adresse, entfernung, parken, image, oeffnungszeiten, price, alterVon, eintritt, info, telefons}){
+export default function Card({id, name, adresse, entfernung, parken, image, oeffnungszeiten, price, alterVon, eintritt, info, telefons}){
     const {lang, setLang} = useContext(LanguageContext);
+    const {familyMember, setFamilyMember} = useContext(UsersContext);
+    
     const { de, uk } = translations;
     const {category} = useParams();
     const {hause } = useParams();
+    const [pickFavorite, setPickFavorite] = useState(false)
     
+
+    function addFavorite(id){
+        if(!familyMember) return
+        setPickFavorite(true)
+        
+        const userLocalStorage = JSON.parse(localStorage.getItem("user"));
+        const userFavLocalStorage = JSON.parse(localStorage.getItem("user")).favorites;
+
+        const favoriteAlreadyExists = userFavLocalStorage.includes(id);
+
+        if(!favoriteAlreadyExists){
+            userFavLocalStorage.push(id)
+            const updatedUser = {... userLocalStorage, favorites: userFavLocalStorage }
+            localStorage.setItem("user", JSON.stringify(updatedUser));
+        }
+        
+    }
+
+    function removeFavorite(id){
+        setPickFavorite(false)
+        
+        const userLocalStorage = JSON.parse(localStorage.getItem("user"));
+        const userFavLocalStorage = JSON.parse(localStorage.getItem("user")).favorites;
+
+        const updatedFavorites = userFavLocalStorage.filter(item =>{
+            return item !== id
+        });
+        const updatedUser = {...userLocalStorage, favorites: updatedFavorites};
+        localStorage.setItem("user", JSON.stringify(updatedUser));
+    }
+
     return(
         <>
 
             {category && 
             <li>
-               <FaRegHeart className="test-icon"/>
-               <FaHeart className="test-icon-2"/>
+               {pickFavorite === false && <FaRegHeart className="test-icon" onClick={()=> addFavorite(id)}   id={id}/> }
+               {pickFavorite === true && <FaHeart className="test-icon-2" onClick={()=> removeFavorite(id)} id={id}/>}
+
                {lang === "uk"? <h2> {uk.name} : {name.uk} </h2> : <h2>{de.name}: {name.de}</h2>}
                {image && <img src={image} alt={name[lang]} />}
                {info && <p> <span>{lang === "uk" ? uk.info : de.info} : </span>  {info[lang]} </p>}

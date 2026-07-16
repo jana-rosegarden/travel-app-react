@@ -14,7 +14,22 @@ export const translations = {
         eintritt: "Eintritt",
         datenschutz: "Datenschutzerklärung",
         impressum: "impressum",
-        notruf: "Notrufnummern in Pula"
+        notruf: "Notrufnummern in Pula",
+        grussFormUser: "Hallo! Wie heißt du?",
+        chooseNameFormUser: "Bitte wähle deinen Namen aus",
+        userAndi: "Andi",
+        userMarian: "Marian",
+        userJana: "Jana",
+        userVera: "Vera",
+        userIhor: "Ihor",
+        userNazar: "Nazar",
+        gruss: "Hallo",
+        frageUserName: "Möchtest du Benutzername auswählen?",
+        userNameInput: "Dein Benutzername hier",
+        absendenBtn: "Absenden!",
+        userNameAblehnenBtn: "Nein, danke",
+        changeUserBtn: "Name ändern",
+
     },
     uk:{
         name: "Назва",
@@ -28,7 +43,21 @@ export const translations = {
         eintritt: "Вхід",
         datenschutz: "Політика конфіденційності",
         impressum: "Вихідні дані",
-        notruf: "Номера екстреної служби в Пулі"
+        notruf: "Номера екстреної служби в Пулі",
+        grussFormUser: "Привіт! Як тебе звуть?",
+        chooseNameFormUser: "Будь ласка, вибери своє ім'я",
+        userAndi: "Анді",
+        userMarian: "Мар'ян",
+        userJana: "Яна",
+        userVera: "Віра",
+        userIhor: "Ігор",
+        userNazar: "Назар",
+        gruss: "Привіт",
+        frageUserName: "Хочеш вибрати собі ім'я користувача?",
+        userNameInput: "Ввести своє ім'я користувача",
+        absendenBtn: "Готово!",
+        userNameAblehnenBtn: "Ні, дякую",
+        changeUserBtn: "Змінити користувача"
     }
 };
 

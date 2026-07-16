@@ -2,16 +2,23 @@ import { useContext, useState, useEffect } from "react";
 import { UsersContext } from "../App";
 
 import { users } from "../data/users.js";
+import { translations } from "../data/translations.js";
+
+import { LanguageContext } from "../App";
 
 export default function UsersModal(){
     //const {currentUser, setCurrentUser} = useContext(UsersContext);
     const {familyMember, setFamilyMember} = useContext(UsersContext);
+    const {lang, setLang} = useContext(LanguageContext);
+
+    const {de, uk} = translations;
+    
     const [inputUser, setInputUser] = useState("");
     const [userName, setUserName] = useState("");
-
     const [modalMessageUserName, setModalMessageUserName] = useState("");
+    
     //Branch select-form
-    const [modalMessageFamilyMember, setModalMessageFamilyMember] = useState("");
+    
     //const [familyMember, setFamilyMember] = useState("");
     
 
@@ -44,7 +51,7 @@ export default function UsersModal(){
         setModalMessageUserName(`Willkommen an Board, ${inputUser}!`);
         setTimeout(()=>{
             setModalMessageUserName("")
-        }, 2000);
+        }, 1500);
 
         /*const newUser = {
             id: inputUser.trim().toLowerCase(),
@@ -112,15 +119,18 @@ export default function UsersModal(){
                 
                 {!familyMember &&
                 <form >
-                    <label htmlFor="familyMember">Hallo! Wie heißt du?</label>
+                    <label htmlFor="familyMember">{translations[lang].grussFormUser}</label>
                     <select 
                     id="familyMember"
                     value=""
                     onChange={handleSelectFamilyMember}>
-                        <option value="" disabled hidden>👤 Bitte wähle deinen Namen aus</option>
-                        <option value="Andi">Andi</option>
-                        <option value="Jana">Jana</option>
-                        <option value="Marian">Marian</option>
+                        <option value="" disabled hidden>👤 {translations[lang].chooseNameFormUser} </option>
+                        <option value={translations[lang].userAndi}>{translations[lang].userAndi}</option>
+                        <option value={translations[lang].userJana}>{translations[lang].userJana}</option>
+                        <option value={translations[lang].userMarian}>{translations[lang].userMarian}</option>
+                        <option value={translations[lang].userVera}>{translations[lang].userVera}</option>
+                        <option value={translations[lang].userIhor}>{translations[lang].userIhor}</option>
+                        <option value={translations[lang].userNazar}>{translations[lang].userNazar}</option>
                     </select>
                 </form>
                 }
@@ -130,10 +140,10 @@ export default function UsersModal(){
                             
                                     {showUsernameForm && 
                                     <>
-                                    <h4>{`Hallo, ${familyMember.name}!`}</h4>
-                                    <h5>Möchtest du Benutzername auswählen?</h5>
+                                    <h4>{`${translations[lang].gruss}, ${familyMember.name}!`}</h4>
+                                    <h5>{translations[lang].frageUserName}</h5>
                                     <form onSubmit={handleSubmitUsername}>
-                                        <label htmlFor="benutzerName"> Dein Benutzername hier: </label>
+                                        <label htmlFor="benutzerName"> {translations[lang].userNameInput}: </label>
                         
                                         <input 
                                             type="text" 
@@ -142,12 +152,12 @@ export default function UsersModal(){
                                             onChange={(e)=>{setInputUser(e.target.value)      
                                             }}/>
                                         <input type="submit" 
-                                            value="Absenden!" 
+                                            value={translations[lang].absendenBtn} 
                                             disabled={inputUser.trim()===""}
                                             />
                                         {inputUser.trim()==="" && 
                                         <input type="button" 
-                                               value="Nein, danke"
+                                               value={translations[lang].userNameAblehnenBtn}
                                                onClick={noUserNameWished}
                                                />
                                         }
@@ -157,7 +167,7 @@ export default function UsersModal(){
                                 </article>}
                 
 
-                {modalMessageFamilyMember && <h4>{modalMessageFamilyMember}</h4>}
+                
                 {modalMessageUserName && <h4>{modalMessageUserName}</h4>}
             </div>
         </>

@@ -53,10 +53,10 @@ export default function Nav(){
             </button>
 
             {familyMember && <>
-                                <h2>Hallo, {displayName}!</h2>
+                                <h2>{translations[lang].gruss}, {displayName}!</h2>
                                 <button type="button"
                                 onClick={changeUsersName}
-                                >Name ändern</button>
+                                >{translations[lang].changeUserBtn}</button>
                             </>
             }
             
