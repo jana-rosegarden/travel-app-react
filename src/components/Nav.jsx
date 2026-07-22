@@ -15,7 +15,7 @@ import { translations } from "../data/translations.js";
 export default function Nav(){
     const {lang, setLang} = useContext(LanguageContext);
     const {showNotfallNummern, setShowNotfallNummern} = useContext(EmergencyTelContext);
-    const {familyMember, setFamilyMember, displayName} = useContext(UsersContext);
+    const {familyMember, setFamilyMember} = useContext(UsersContext);
     
     //const [isUserSubmit, setIsUserSubmit] = useState(localStorage.getItem("isUserSubmit") === "true");
 
@@ -23,6 +23,12 @@ export default function Nav(){
         setShowNotfallNummern(prev => !prev)
     };
 
+    const usersFromLocalStorage = localStorage.getItem("users") ? JSON.parse(localStorage.getItem("users")) : null ;
+    const currentUser = usersFromLocalStorage? usersFromLocalStorage.find(item=>{
+        return item.id === familyMember
+    }) : null;
+
+    
     {/* 
     function submitUsersName(){
         
@@ -52,8 +58,8 @@ export default function Nav(){
             > {translations[lang].notruf}
             </button>
 
-            {familyMember && <>
-                                <h2>{translations[lang].gruss}, {displayName}!</h2>
+            {currentUser && <>
+                                <h2>{translations[lang].gruss}, {currentUser.username ? currentUser.username : currentUser.name}!</h2>
                                 <button type="button"
                                 onClick={changeUsersName}
                                 >{translations[lang].changeUserBtn}</button>

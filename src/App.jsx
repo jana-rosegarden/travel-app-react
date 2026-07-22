@@ -20,9 +20,10 @@ function App() {
   const [lang, setLang] = useState(localStorage.getItem("language") || "de");
   const [showNotfallNummern, setShowNotfallNummern] = useState(false);
   //const [familyMember, setFamilyMember] = useState(localStorage.getItem("user"));
+  
   const [familyMember, setFamilyMember] = useState(()=>{
     const storedUser = localStorage.getItem("user");
-    return storedUser ? JSON.parse(storedUser) : null
+    return storedUser ? storedUser : null
   });
   
   useEffect(()=>{
@@ -32,9 +33,7 @@ function App() {
   return (
       <LanguageContext. Provider value={{lang, setLang}}> 
       <UsersContext. Provider value={{familyMember, 
-                                      setFamilyMember,
-                                      displayName: !familyMember ? ""
-                                                  : familyMember.username ? familyMember.username : familyMember.name }}> 
+                                      setFamilyMember}}> 
       <EmergencyTelContext.Provider value={{showNotfallNummern, setShowNotfallNummern}}> 
       
       <BrowserRouter>

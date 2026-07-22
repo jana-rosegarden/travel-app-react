@@ -22,22 +22,33 @@ export default function UsersModal(){
     //const [familyMember, setFamilyMember] = useState("");
     
 
+    const currentUserId = familyMember;
+    const usersFromLocalStorage = JSON.parse(localStorage.getItem("users"));
+    
+    const currentUser = usersFromLocalStorage.find(item=>{
+    return item.id === currentUserId
+    });
+    
+
     const showUsernameForm =
     familyMember &&
-    !familyMember.username &&
-    !familyMember.isUserNameRejected;
+    !currentUser.username &&
+    !currentUser.isUserNameRejected;
+   console.log(currentUser)
 
     function handleSubmitUsername(e) {
          e.preventDefault();
 
         if (inputUser.trim() === "") return;
         
-        setFamilyMember((prev) => {return {...prev, username: inputUser}});
+        //setFamilyMember((prev) => {return {...prev, username: inputUser}});
         
         //Update current User:
-        const currentUser = JSON.parse(localStorage.getItem("user"))
+
+        //const currentUser = JSON.parse(localStorage.getItem("user"))
         const updatedUser = {...currentUser, username: inputUser};
-        localStorage.setItem("user", JSON.stringify(updatedUser));
+        //localStorage.setItem("user", JSON.stringify(updatedUser));
+
         //Update Users:
         const storedUsers = localStorage.getItem("users");
         const usersLocalStorage = JSON.parse(storedUsers);
@@ -76,6 +87,11 @@ export default function UsersModal(){
     
 
     function handleSelectFamilyMember(e){
+        const currentUserId = e.target.value.toLowerCase();
+
+        //setFamilyMember(newUser);
+        setFamilyMember(currentUserId);
+
         const newUser = {
             id: e.target.value.toLowerCase(),
             name: e.target.value,
@@ -83,13 +99,13 @@ export default function UsersModal(){
             username: "",
             favorites: []
         };
-        setFamilyMember(newUser);
-        localStorage.setItem("user", JSON.stringify(newUser));
+        
+        localStorage.setItem("user", currentUserId);
 
         const storedUsers = localStorage.getItem("users");
         const usersLocalStorage = storedUsers? JSON.parse(storedUsers) : [];
         
-        const userAlreadyExists = usersLocalStorage.some(item => {return item.id === newUser.id});
+        const userAlreadyExists = usersLocalStorage.some(item => {return item.id === currentUserId});
 
         if(userAlreadyExists === false){
             usersLocalStorage.push(newUser)
@@ -100,17 +116,25 @@ export default function UsersModal(){
      function noUserNameWished(){
         
         const updatedUser = {
-            ...familyMember,
+            ...currentUser,
             isUserNameRejected: true
        };
 
-       setFamilyMember(updatedUser);
+       //setFamilyMember(updatedUser);
 
-       localStorage.setItem(
+       /*localStorage.setItem(
         "user",
          JSON.stringify(updatedUser)
-        );
-     }
+        ); */
+
+        const updatedUsers = usersFromLocalStorage.map(item => {
+             return (item.id === currentUserId ? updatedUser : item
+
+             )
+        });
+        
+        localStorage.setItem("users", JSON.stringify(updatedUsers));
+     };
 
     
     return(
@@ -140,7 +164,7 @@ export default function UsersModal(){
                             
                                     {showUsernameForm && 
                                     <>
-                                    <h4>{`${translations[lang].gruss}, ${familyMember.name}!`}</h4>
+                                    <h4>{`${translations[lang].gruss}, ${currentUser.name}!`}</h4>
                                     <h5>{translations[lang].frageUserName}</h5>
                                     <form onSubmit={handleSubmitUsername}>
                                         <label htmlFor="benutzerName"> {translations[lang].userNameInput}: </label>
