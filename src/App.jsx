@@ -14,6 +14,7 @@ import Kategorieliste from './pages/Kategorieliste.jsx';
 export const LanguageContext = createContext();
 export const EmergencyTelContext = createContext();
 export const UsersContext = createContext();
+export const FavoritesContext = createContext();
 
 function App() {
   
@@ -25,7 +26,11 @@ function App() {
     const storedUser = localStorage.getItem("user");
     return storedUser ? storedUser : null
   });
-  
+
+  const [favorites, setFavorites] = useState(familyMember? JSON.parse(localStorage.getItem("users")).find(item => item.id === familyMember).favorites : []);
+  //console.log(JSON.parse(localStorage.getItem("users")).find(item => item.id === familyMember).favorites);
+  console.log(favorites)
+
   useEffect(()=>{
     localStorage.setItem("language", lang)
   }, [lang])
@@ -34,6 +39,7 @@ function App() {
       <LanguageContext. Provider value={{lang, setLang}}> 
       <UsersContext. Provider value={{familyMember, 
                                       setFamilyMember}}> 
+      <FavoritesContext. Provider value={{favorites, setFavorites}}> 
       <EmergencyTelContext.Provider value={{showNotfallNummern, setShowNotfallNummern}}> 
       
       <BrowserRouter>
@@ -51,6 +57,7 @@ function App() {
       </BrowserRouter>
 
       </EmergencyTelContext.Provider>
+      </FavoritesContext. Provider>
       </UsersContext.Provider> 
       </LanguageContext. Provider>
   )

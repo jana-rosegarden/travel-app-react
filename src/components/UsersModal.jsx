@@ -5,16 +5,17 @@ import { users } from "../data/users.js";
 import { translations } from "../data/translations.js";
 
 import { LanguageContext } from "../App";
+import { FavoritesContext } from "../App";
 
 export default function UsersModal(){
     //const {currentUser, setCurrentUser} = useContext(UsersContext);
     const {familyMember, setFamilyMember} = useContext(UsersContext);
     const {lang, setLang} = useContext(LanguageContext);
-
+    const { favorites, setFavorites} = useContext(FavoritesContext);
     const {de, uk} = translations;
     
     const [inputUser, setInputUser] = useState("");
-    const [userName, setUserName] = useState("");
+    //const [userName, setUserName] = useState("");
     const [modalMessageUserName, setModalMessageUserName] = useState("");
     
     //Branch select-form
@@ -29,12 +30,13 @@ export default function UsersModal(){
     return item.id === currentUserId
     });
     
-
+    const [isUserNameRejected, setIsUserNameRejected] = useState(currentUser? currentUser.isUserNameRejected : false);
+    
     const showUsernameForm =
     familyMember &&
     !currentUser.username &&
     !currentUser.isUserNameRejected;
-   console.log(currentUser)
+   
 
     function handleSubmitUsername(e) {
          e.preventDefault();
@@ -88,9 +90,10 @@ export default function UsersModal(){
 
     function handleSelectFamilyMember(e){
         const currentUserId = e.target.value.toLowerCase();
-
+        
         //setFamilyMember(newUser);
         setFamilyMember(currentUserId);
+        setIsUserNameRejected(false);
 
         const newUser = {
             id: e.target.value.toLowerCase(),
@@ -110,7 +113,19 @@ export default function UsersModal(){
         if(userAlreadyExists === false){
             usersLocalStorage.push(newUser)
             localStorage.setItem("users", JSON.stringify(usersLocalStorage))
+        } else {
+           
+            const currentUser = usersLocalStorage.find(item=>{
+                return item.id === currentUserId
+            });
+            
+            const updatedUsers = usersLocalStorage.map(item => {
+                return (item.id === currentUserId? {...currentUser, isUserNameRejected: false}: item)
+            });
+            localStorage.setItem("users", JSON.stringify(updatedUsers));
+            setFavorites(currentUser.favorites);
         };
+        
     };
     
      function noUserNameWished(){
@@ -120,16 +135,10 @@ export default function UsersModal(){
             isUserNameRejected: true
        };
 
-       //setFamilyMember(updatedUser);
-
-       /*localStorage.setItem(
-        "user",
-         JSON.stringify(updatedUser)
-        ); */
-
+       
+        setIsUserNameRejected(true);
         const updatedUsers = usersFromLocalStorage.map(item => {
              return (item.id === currentUserId ? updatedUser : item
-
              )
         });
         

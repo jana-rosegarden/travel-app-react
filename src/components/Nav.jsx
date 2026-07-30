@@ -7,6 +7,7 @@ import ukrLang from "../assets/images/icons/ukr.webp"
 import { LanguageContext } from "../App.jsx";
 import { EmergencyTelContext } from "../App.jsx";
 import { UsersContext } from "../App.jsx";
+import { FavoritesContext } from "../App.jsx";
 
 import UsersModal from "./UsersModal.jsx";
 
@@ -16,7 +17,7 @@ export default function Nav(){
     const {lang, setLang} = useContext(LanguageContext);
     const {showNotfallNummern, setShowNotfallNummern} = useContext(EmergencyTelContext);
     const {familyMember, setFamilyMember} = useContext(UsersContext);
-    
+    const {favorites, setFavorites } = useContext(FavoritesContext);
     //const [isUserSubmit, setIsUserSubmit] = useState(localStorage.getItem("isUserSubmit") === "true");
 
     function toggleShowNotfallNummer(){
@@ -42,6 +43,7 @@ export default function Nav(){
         //setCurrentUser("");
         localStorage.removeItem("user");
         setFamilyMember(null);
+        setFavorites([]);
     };
     
     
