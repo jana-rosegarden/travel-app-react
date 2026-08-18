@@ -10,6 +10,7 @@ import Main from './components/Main.jsx';
 import Home from './pages/Home.jsx';
 import Hause from './pages/Hause.jsx';
 import Kategorieliste from './pages/Kategorieliste.jsx';
+import MeineFavoriten from './pages/MeineFavoriten.jsx';
 
 export const LanguageContext = createContext();
 export const EmergencyTelContext = createContext();
@@ -51,6 +52,7 @@ function App() {
             <Route path='/' element={<Home/>}></Route>
             <Route path='/house/:hause' element={<Hause />}></Route>
             <Route path='/category/:category' element={<Kategorieliste />}></Route>
+            <Route path='/favorites/:favorites' element={<MeineFavoriten />}></Route>
         </Routes>
 
 

@@ -10,6 +10,7 @@ import { UsersContext } from "../App.jsx";
 import { FavoritesContext } from "../App.jsx";
 
 import UsersModal from "./UsersModal.jsx";
+import MeineFavoriten from "../pages/MeineFavoriten.jsx";
 
 import { translations } from "../data/translations.js";
 
@@ -19,17 +20,23 @@ export default function Nav(){
     const {familyMember, setFamilyMember} = useContext(UsersContext);
     const {favorites, setFavorites } = useContext(FavoritesContext);
     //const [isUserSubmit, setIsUserSubmit] = useState(localStorage.getItem("isUserSubmit") === "true");
+    
 
     function toggleShowNotfallNummer(){
         setShowNotfallNummern(prev => !prev)
     };
 
     const usersFromLocalStorage = localStorage.getItem("users") ? JSON.parse(localStorage.getItem("users")) : null ;
+    
     const currentUser = usersFromLocalStorage? usersFromLocalStorage.find(item=>{
         return item.id === familyMember
     }) : null;
 
-    
+    console.log(currentUser)
+    const currentUserParams = !currentUser ? "nouser" : familyMember;
+    console.log(currentUserParams);
+
+
     {/* 
     function submitUsersName(){
         
@@ -54,6 +61,7 @@ export default function Nav(){
                 <Link to="/"> {lang === "de" ? "Home" : "Головна"} </Link>
                 <Link to="/house/paradiso"> {lang === "de" ? "Haus Monte Paradiso" : "Будинок Monte Paradiso: Яна та Анді"} </Link>
                 <Link to="/house/benussia"> {lang === "de" ? "Haus Mattea Benussia" : "Будинок Mattea Benussia: Назар та батьки"}  </Link>
+                <Link to={`/favorites/${currentUserParams}`}> Favorites </Link>
             </div>
             <button
                 onClick={toggleShowNotfallNummer}
