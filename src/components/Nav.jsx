@@ -32,9 +32,8 @@ export default function Nav(){
         return item.id === familyMember
     }) : null;
 
-    console.log(currentUser)
     const currentUserParams = !currentUser ? "nouser" : familyMember;
-    console.log(currentUserParams);
+    
 
 
     {/* 

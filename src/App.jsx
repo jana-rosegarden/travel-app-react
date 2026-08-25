@@ -27,10 +27,9 @@ function App() {
     const storedUser = localStorage.getItem("user");
     return storedUser ? storedUser : null
   });
-
+  
   const [favorites, setFavorites] = useState(familyMember? JSON.parse(localStorage.getItem("users")).find(item => item.id === familyMember).favorites : []);
   //console.log(JSON.parse(localStorage.getItem("users")).find(item => item.id === familyMember).favorites);
-  console.log(favorites)
 
   useEffect(()=>{
     localStorage.setItem("language", lang)
