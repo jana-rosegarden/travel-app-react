@@ -73,7 +73,7 @@ export default function Card({id, name, adresse, entfernung, parken, image, oeff
             {category && 
             <li>
                {favoriteIsChoosen === false && <FaRegHeart className="test-icon" onClick={()=> addFavorite(id)}   id={id}/> }
-               {favoriteIsChoosen === true && <FaHeart className="test-icon-2" onClick={()=> removeFavorite(id)} id={id}/>}
+               {favoriteIsChoosen === true && <FaHeart className="add-fav-icon" onClick={()=> removeFavorite(id)} id={id}/>}
 
                {lang === "uk"? <h2> {uk.name} : {name.uk} </h2> : <h2>{de.name}: {name.de}</h2>}
                {image && <img src={image} alt={name[lang]} />}
