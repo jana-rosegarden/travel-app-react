@@ -50,7 +50,7 @@ export default function Kategorieliste(){
                             info = {item.info || undefined }
                             alterVon = {item.alterVon || undefined} 
                             eintritt = { item.eintritt || undefined}
-                            info= {item.info || undefined }
+                            
                             />
                     )
                 })}
