@@ -11,6 +11,7 @@ import Home from './pages/Home.jsx';
 import Hause from './pages/Hause.jsx';
 import Kategorieliste from './pages/Kategorieliste.jsx';
 import MeineFavoriten from './pages/MeineFavoriten.jsx';
+import Einstellungen from "./pages/Einstellungen.jsx";
 
 export const LanguageContext = createContext();
 export const EmergencyTelContext = createContext();
@@ -52,6 +53,7 @@ function App() {
             <Route path='/house/:hause' element={<Hause />}></Route>
             <Route path='/category/:category' element={<Kategorieliste />}></Route>
             <Route path='/favorites/:favorites' element={<MeineFavoriten />}></Route>
+            <Route path='/einstellungen/:einstellungen' element={<Einstellungen />}> </Route>
         </Routes>
 
 

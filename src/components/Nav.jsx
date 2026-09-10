@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import { useState, useContext } from "react";
+import { IoSettingsOutline } from "react-icons/io5";
 
 import deLang from "../assets/images/icons/de.webp";
 import ukrLang from "../assets/images/icons/ukr.webp"
@@ -60,7 +61,8 @@ export default function Nav(){
                 <Link to="/"> {lang === "de" ? "Home" : "Головна"} </Link>
                 <Link to="/house/paradiso"> {lang === "de" ? "Haus Monte Paradiso" : "Будинок Monte Paradiso: Яна та Анді"} </Link>
                 <Link to="/house/benussia"> {lang === "de" ? "Haus Mattea Benussia" : "Будинок Mattea Benussia: Назар та батьки"}  </Link>
-                <Link to={`/favorites/${currentUserParams}`}> Favorites </Link>
+                <Link to={`/favorites/${currentUserParams}`}> {translations[lang].favoriten}</Link>
+                <Link to={`/einstellungen/${currentUserParams}`}><IoSettingsOutline /></Link>
             </div>
             <button
                 onClick={toggleShowNotfallNummer}
