@@ -26,7 +26,7 @@ export default function UsersModal(){
     const currentUserId = familyMember;
     const usersFromLocalStorage = JSON.parse(localStorage.getItem("users"));
     
-    const currentUser = usersFromLocalStorage.find(item=>{
+    const currentUser = usersFromLocalStorage && usersFromLocalStorage.find(item=>{
     return item.id === currentUserId
     });
     
