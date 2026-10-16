@@ -29,7 +29,10 @@ export const translations = {
         absendenBtn: "Absenden!",
         userNameAblehnenBtn: "Nein, danke",
         changeUserBtn: "Name ändern",
-        favoriten: "Favoriten"
+        favoriten: "Favoriten",
+        currentUserName: "Name", 
+        userName: "Benutzername",
+        noChosen: "Nicht ausgewählt"
     },
     uk:{
         name: "Назва",
@@ -58,7 +61,10 @@ export const translations = {
         absendenBtn: "Готово!",
         userNameAblehnenBtn: "Ні, дякую",
         changeUserBtn: "Змінити користувача",
-        favoriten: "Обране"
+        favoriten: "Обране",
+        currentUserName: "Ім'я", 
+        userName: "Ім'я користувача",
+        noChosen: "Не вибране"
     }
 };
 
